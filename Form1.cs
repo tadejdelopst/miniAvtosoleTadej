@@ -13,5 +13,9 @@ namespace miniProjekt___Avtosole {
         public Form1() {
             InitializeComponent();
         }
+
+        private void gumb_Click(object sender, EventArgs e) {
+            gumb.Text = "Evoga!";
+        }
     }
 }
