@@ -19,6 +19,7 @@ namespace miniProjekt___Avtosole {
 
         private void gumb_Click(object sender, EventArgs e) {
             gumb.Text = "Evoga!";
+            gumb.Text = "Evoga2!";
         }
     }
 }
