@@ -1,0 +1,42 @@
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\miniProjekt - Avtosole.exe.config
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\miniProjekt - Avtosole.exe
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\miniProjekt - Avtosole.pdb
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\Npgsql.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Buffers.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Memory.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Numerics.Vectors.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Security.AccessControl.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Security.Permissions.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Security.Principal.Windows.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Text.Encodings.Web.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Text.Json.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Threading.Channels.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.ValueTuple.dll
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\Npgsql.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Buffers.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Memory.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Numerics.Vectors.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Security.AccessControl.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Security.Permissions.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Security.Principal.Windows.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Text.Encodings.Web.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Text.Json.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Threading.Channels.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Namizje\projects\miniProjekt - Avtosole\bin\Debug\System.ValueTuple.xml
+D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt - Avtosole.csprojAssemblyReference.cache
+D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt___Avtosole.Prijava.resources
+D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt___Avtosole.Properties.Resources.resources
+D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt___Avtosole.RegistracijaU.resources
+D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt - Avtosole.csproj.GenerateResource.cache
+D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt - Avtosole.csproj.CoreCompileInputs.cache
+D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt - Avtosole.csproj.CopyComplete
+D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt - Avtosole.exe
+D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt - Avtosole.pdb
