@@ -10,10 +10,9 @@ namespace miniProjekt___Avtosole {
         public string Ime { get; set; }
         public string Posta { get; set; }
 
-        public Kraj() : this(0, "", "") {
-
-        }
-
+        public Kraj() : this(0) {}
+        public Kraj(int _id) : this(_id, "") {}
+        public Kraj(int _id, string _ime) : this(_id, _ime, "") {}
         public Kraj(int _id, string _ime, string _posta) {
             this.ID = _id;
             this.Ime = _ime;

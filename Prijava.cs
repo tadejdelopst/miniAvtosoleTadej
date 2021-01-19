@@ -157,5 +157,9 @@ namespace miniProjekt___Avtosole {
                 conS.Close();
             }
         }
+
+        private void Prijava_Load(object sender, EventArgs e) {
+
+        }
     }
 }

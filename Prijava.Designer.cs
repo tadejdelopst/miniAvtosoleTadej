@@ -221,6 +221,7 @@
             this.Controls.Add(this.prijavaPanel);
             this.Name = "Prijava";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Prijava_Load);
             this.prijavaPanel.ResumeLayout(false);
             this.prijavaPanel.PerformLayout();
             this.prijavaAvtoPanel.ResumeLayout(false);
