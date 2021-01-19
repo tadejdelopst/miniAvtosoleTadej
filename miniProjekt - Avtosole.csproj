@@ -107,6 +107,7 @@
       <DependentUpon>AvtosolaPage.cs</DependentUpon>
     </Compile>
     <Compile Include="baza.cs" />
+    <Compile Include="Izpit.cs" />
     <Compile Include="Kraj.cs" />
     <Compile Include="Prijava.cs">
       <SubType>Form</SubType>

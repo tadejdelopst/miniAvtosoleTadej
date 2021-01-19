@@ -38,7 +38,23 @@ namespace miniProjekt___Avtosole {
             this.preklicUrediBtn = new System.Windows.Forms.Button();
             this.urediKrajTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.instruktorjiBtn = new System.Windows.Forms.Button();
+            this.izpitiBtn = new System.Windows.Forms.Button();
+            this.izpitiPanel = new System.Windows.Forms.Panel();
+            this.instruktorjiPanel = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.urediIzpitiCombobox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.prekliciIzpitiBtn = new System.Windows.Forms.Button();
+            this.prekliciInstruktorjiBtn = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tipIzpitaTxt = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.minStarostIzpitTxt = new System.Windows.Forms.TextBox();
             this.urediPanel.SuspendLayout();
+            this.izpitiPanel.SuspendLayout();
+            this.instruktorjiPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label6
@@ -173,11 +189,150 @@ namespace miniProjekt___Avtosole {
             this.label3.TabIndex = 33;
             this.label3.Text = "Kraj:";
             // 
+            // instruktorjiBtn
+            // 
+            this.instruktorjiBtn.Location = new System.Drawing.Point(634, 38);
+            this.instruktorjiBtn.Name = "instruktorjiBtn";
+            this.instruktorjiBtn.Size = new System.Drawing.Size(134, 52);
+            this.instruktorjiBtn.TabIndex = 35;
+            this.instruktorjiBtn.Text = "Inštruktorji";
+            this.instruktorjiBtn.UseVisualStyleBackColor = true;
+            this.instruktorjiBtn.Click += new System.EventHandler(this.instruktorjiBtn_Click);
+            // 
+            // izpitiBtn
+            // 
+            this.izpitiBtn.Location = new System.Drawing.Point(375, 38);
+            this.izpitiBtn.Name = "izpitiBtn";
+            this.izpitiBtn.Size = new System.Drawing.Size(135, 52);
+            this.izpitiBtn.TabIndex = 36;
+            this.izpitiBtn.Text = "Izpiti";
+            this.izpitiBtn.UseVisualStyleBackColor = true;
+            this.izpitiBtn.Click += new System.EventHandler(this.izpitiBtn_Click);
+            // 
+            // izpitiPanel
+            // 
+            this.izpitiPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.izpitiPanel.Controls.Add(this.label8);
+            this.izpitiPanel.Controls.Add(this.prekliciIzpitiBtn);
+            this.izpitiPanel.Controls.Add(this.tipIzpitaTxt);
+            this.izpitiPanel.Controls.Add(this.label9);
+            this.izpitiPanel.Controls.Add(this.label4);
+            this.izpitiPanel.Controls.Add(this.minStarostIzpitTxt);
+            this.izpitiPanel.Controls.Add(this.urediIzpitiCombobox);
+            this.izpitiPanel.Enabled = false;
+            this.izpitiPanel.Location = new System.Drawing.Point(307, 96);
+            this.izpitiPanel.Name = "izpitiPanel";
+            this.izpitiPanel.Size = new System.Drawing.Size(257, 271);
+            this.izpitiPanel.TabIndex = 37;
+            // 
+            // instruktorjiPanel
+            // 
+            this.instruktorjiPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.instruktorjiPanel.Controls.Add(this.prekliciInstruktorjiBtn);
+            this.instruktorjiPanel.Controls.Add(this.label7);
+            this.instruktorjiPanel.Controls.Add(this.comboBox1);
+            this.instruktorjiPanel.Enabled = false;
+            this.instruktorjiPanel.Location = new System.Drawing.Point(570, 96);
+            this.instruktorjiPanel.Name = "instruktorjiPanel";
+            this.instruktorjiPanel.Size = new System.Drawing.Size(257, 271);
+            this.instruktorjiPanel.TabIndex = 38;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(64, 32);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(178, 24);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // urediIzpitiCombobox
+            // 
+            this.urediIzpitiCombobox.FormattingEnabled = true;
+            this.urediIzpitiCombobox.Location = new System.Drawing.Point(55, 32);
+            this.urediIzpitiCombobox.Name = "urediIzpitiCombobox";
+            this.urediIzpitiCombobox.Size = new System.Drawing.Size(178, 24);
+            this.urediIzpitiCombobox.TabIndex = 1;
+            this.urediIzpitiCombobox.SelectedIndexChanged += new System.EventHandler(this.urediIzpitiCombobox_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Vsi Izpiti:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 17);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Vsi inštruktorji:";
+            // 
+            // prekliciIzpitiBtn
+            // 
+            this.prekliciIzpitiBtn.Location = new System.Drawing.Point(140, 193);
+            this.prekliciIzpitiBtn.Name = "prekliciIzpitiBtn";
+            this.prekliciIzpitiBtn.Size = new System.Drawing.Size(110, 40);
+            this.prekliciIzpitiBtn.TabIndex = 33;
+            this.prekliciIzpitiBtn.Text = "Prekliči";
+            this.prekliciIzpitiBtn.UseVisualStyleBackColor = true;
+            this.prekliciIzpitiBtn.Click += new System.EventHandler(this.prekliciIzpitiBtn_Click);
+            // 
+            // prekliciInstruktorjiBtn
+            // 
+            this.prekliciInstruktorjiBtn.Location = new System.Drawing.Point(132, 193);
+            this.prekliciInstruktorjiBtn.Name = "prekliciInstruktorjiBtn";
+            this.prekliciInstruktorjiBtn.Size = new System.Drawing.Size(110, 40);
+            this.prekliciInstruktorjiBtn.TabIndex = 33;
+            this.prekliciInstruktorjiBtn.Text = "Prekliči";
+            this.prekliciInstruktorjiBtn.UseVisualStyleBackColor = true;
+            this.prekliciInstruktorjiBtn.Click += new System.EventHandler(this.prekliciInstruktorjiBtn_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(63, 88);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 17);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "Tip:";
+            // 
+            // tipIzpitaTxt
+            // 
+            this.tipIzpitaTxt.Location = new System.Drawing.Point(101, 86);
+            this.tipIzpitaTxt.Name = "tipIzpitaTxt";
+            this.tipIzpitaTxt.Size = new System.Drawing.Size(100, 22);
+            this.tipIzpitaTxt.TabIndex = 36;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 117);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 17);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Min Starost:";
+            // 
+            // minStarostIzpitTxt
+            // 
+            this.minStarostIzpitTxt.Location = new System.Drawing.Point(101, 114);
+            this.minStarostIzpitTxt.Name = "minStarostIzpitTxt";
+            this.minStarostIzpitTxt.Size = new System.Drawing.Size(100, 22);
+            this.minStarostIzpitTxt.TabIndex = 38;
+            // 
             // AvtosolaPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(892, 444);
+            this.Controls.Add(this.instruktorjiPanel);
+            this.Controls.Add(this.izpitiPanel);
+            this.Controls.Add(this.izpitiBtn);
+            this.Controls.Add(this.instruktorjiBtn);
             this.Controls.Add(this.urediPodatkeBtn);
             this.Controls.Add(this.urediPanel);
             this.Name = "AvtosolaPage";
@@ -185,6 +340,10 @@ namespace miniProjekt___Avtosole {
             this.Load += new System.EventHandler(this.AvtosolaPage_Load);
             this.urediPanel.ResumeLayout(false);
             this.urediPanel.PerformLayout();
+            this.izpitiPanel.ResumeLayout(false);
+            this.izpitiPanel.PerformLayout();
+            this.instruktorjiPanel.ResumeLayout(false);
+            this.instruktorjiPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -205,5 +364,19 @@ namespace miniProjekt___Avtosole {
         private System.Windows.Forms.Button preklicUrediBtn;
         private System.Windows.Forms.TextBox urediKrajTxt;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button instruktorjiBtn;
+        private System.Windows.Forms.Button izpitiBtn;
+        private System.Windows.Forms.Panel izpitiPanel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox urediIzpitiCombobox;
+        private System.Windows.Forms.Panel instruktorjiPanel;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button prekliciIzpitiBtn;
+        private System.Windows.Forms.Button prekliciInstruktorjiBtn;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tipIzpitaTxt;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox minStarostIzpitTxt;
     }
 }

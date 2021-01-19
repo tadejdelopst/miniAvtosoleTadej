@@ -13,6 +13,7 @@ namespace miniProjekt___Avtosole {
     public partial class AvtosolaPage : Form {
         Avtosola sola = new Avtosola();
         List<Kraj> krajceki = new List<Kraj>();
+        List<Izpit> izpiti = new List<Izpit>();
         string connect = baza.connect();
         public AvtosolaPage(Avtosola neki) {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace miniProjekt___Avtosole {
 
         private void urediPodatkeBtn_Click(object sender, EventArgs e) {
             urediPanel.Enabled = true;
+            izpitiPanel.Enabled = false;
             urediPodatkeBtn.Enabled = false;
             }
 
@@ -124,6 +126,60 @@ namespace miniProjekt___Avtosole {
                 }
                 con.Close();
             }
+        }
+
+        private void updateIzpitiList() {
+            izpiti.Clear();
+            urediIzpitiCombobox.Items.Clear();
+
+            using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
+                con.Open();
+
+                NpgsqlCommand com = new NpgsqlCommand("SELECT * FROM vseAvtosoleIzpitiIzpis ('" + sola.ID+"')", con);
+                NpgsqlDataReader reader = com.ExecuteReader();
+                while (reader.Read()) {
+                    urediIzpitiCombobox.Items.Add(reader.GetString(1) + " " + reader.GetInt32(2));
+
+                    //string _tip, int _id, int _starostMin, int _avtosolaID
+                    Izpit hm = new Izpit(reader.GetString(1), reader.GetInt32(0), reader.GetInt32(2), reader.GetInt32(3));
+
+                    izpiti.Add(hm);
+                }
+                con.Close();
+            }
+        }
+
+        private void izpitiBtn_Click(object sender, EventArgs e) {
+            izpitiPanel.Enabled = true;
+            urediPanel.Enabled = false;
+            instruktorjiPanel.Enabled = false;
+            izpitiBtn.Enabled = false;
+            updateIzpitiList();
+        }
+
+        private void instruktorjiBtn_Click(object sender, EventArgs e) {
+            instruktorjiPanel.Enabled = true;
+            urediPanel.Enabled = false;
+            izpitiPanel.Enabled = false;
+        }
+
+        private void prekliciIzpitiBtn_Click(object sender, EventArgs e) {
+            izpitiPanel.Enabled = false;
+            izpitiBtn.Enabled = true;
+            updateIzpitiList();
+            minStarostIzpitTxt.Clear();
+            tipIzpitaTxt.Clear();
+        }
+
+        private void prekliciInstruktorjiBtn_Click(object sender, EventArgs e) {
+            instruktorjiPanel.Enabled = false;
+            instruktorjiBtn.Enabled = true;
+        }
+
+        private void urediIzpitiCombobox_SelectedIndexChanged(object sender, EventArgs e) {
+            int idIzpita = urediIzpitiCombobox.SelectedIndex;
+            minStarostIzpitTxt.Text = Convert.ToString(izpiti[idIzpita].Starost_Min);
+            tipIzpitaTxt.Text = izpiti[idIzpita].Tip;
         }
     }
 }
