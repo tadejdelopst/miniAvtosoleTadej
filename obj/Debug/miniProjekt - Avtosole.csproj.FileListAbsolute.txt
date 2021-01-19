@@ -40,3 +40,4 @@ D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt - Avtosole.cspr
 D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt - Avtosole.csproj.CopyComplete
 D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt - Avtosole.exe
 D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt - Avtosole.pdb
+D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt___Avtosole.UporabnikPage.resources

@@ -13,6 +13,9 @@ using System.Configuration;
 namespace miniProjekt___Avtosole {
     public partial class Prijava : Form {
         string connect = baza.connect();
+        Uporabnik user = new Uporabnik();
+        int check = 0;
+
         public Prijava() {
             InitializeComponent();
         }
@@ -27,6 +30,25 @@ namespace miniProjekt___Avtosole {
             this.Hide();
         }
 
+        public void UporabnikNastavi() {
+            using (NpgsqlConnection conS = new NpgsqlConnection(connect)) {
+                conS.Open();
+
+                NpgsqlCommand comS = new NpgsqlCommand("SELECT * FROM uporabnikpodatki('" + prijavaEmailTxtBox.Text + "')", conS);
+                NpgsqlDataReader readerS = comS.ExecuteReader();
+                while (readerS.Read()) {
+                    user.ID = readerS.GetInt32(0);
+                    user.Email = readerS.GetString(1);
+                    user.Pass = readerS.GetString(2);
+                    user.Starost = readerS.GetInt32(3);
+                    user.Naslov = readerS.GetString(4);
+                    user.Telefon = readerS.GetString(5);
+                    user.Kraj_ID = readerS.GetInt32(6);
+                }
+                conS.Close();
+            }
+        }
+
         private void PrijavaBtn_Click(object sender, EventArgs e) {
 
                 using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
@@ -36,13 +58,19 @@ namespace miniProjekt___Avtosole {
                 NpgsqlDataReader reader = com.ExecuteReader();
                 while (reader.Read()) {
                     if (reader.GetString(0) == "USPESNO") {
-                        MessageBox.Show("Prijava uspela!");
+                        check = 1;
                     } else {
                         MessageBox.Show("Prijava Neuspesna!");
                     }
                 }
-
                 con.Close();
+            }
+                if(check == 1) {
+                UporabnikNastavi();
+                MessageBox.Show("Prijava uspela!");
+                UporabnikPage uporanbikPage = new UporabnikPage(user);
+                uporanbikPage.Show();
+                this.Hide();
             }
         }
     }

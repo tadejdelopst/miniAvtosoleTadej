@@ -115,6 +115,13 @@
     <Compile Include="RegistracijaU.Designer.cs">
       <DependentUpon>RegistracijaU.cs</DependentUpon>
     </Compile>
+    <Compile Include="Uporabnik.cs" />
+    <Compile Include="UporabnikPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UporabnikPage.Designer.cs">
+      <DependentUpon>UporabnikPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="RegistracijaU.resx">
       <DependentUpon>RegistracijaU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UporabnikPage.resx">
+      <DependentUpon>UporabnikPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

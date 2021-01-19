@@ -28,11 +28,13 @@ namespace miniProjekt___Avtosole {
                 while (reader.Read()) {
                     if (reader.GetString(0) == "USPESNO") {
                         MessageBox.Show("Registracija uspela!");
+                        Prijava prijava = new Prijava();
+                        prijava.Show();
+                        this.Hide();
                     } else {
                         MessageBox.Show("Uporabnik s tem emailom že obstaja!");
                     }
                 }
-
                 con.Close();
             }
         }
