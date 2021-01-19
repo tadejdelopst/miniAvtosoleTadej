@@ -99,6 +99,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Avtosola.cs" />
+    <Compile Include="AvtosolaPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AvtosolaPage.Designer.cs">
+      <DependentUpon>AvtosolaPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="baza.cs" />
     <Compile Include="Kraj.cs" />
     <Compile Include="Prijava.cs">
@@ -109,6 +116,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistracijaAvto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistracijaAvto.Designer.cs">
+      <DependentUpon>RegistracijaAvto.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistracijaU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +135,9 @@
     <Compile Include="UporabnikPage.Designer.cs">
       <DependentUpon>UporabnikPage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AvtosolaPage.resx">
+      <DependentUpon>AvtosolaPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +150,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegistracijaAvto.resx">
+      <DependentUpon>RegistracijaAvto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistracijaU.resx">
       <DependentUpon>RegistracijaU.cs</DependentUpon>
     </EmbeddedResource>
