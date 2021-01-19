@@ -67,6 +67,7 @@ namespace miniProjekt___Avtosole {
             }
                 if(check == 1) {
                 UporabnikNastavi();
+                MessageBox.Show(user.Pass);
                 MessageBox.Show("Prijava uspela!");
                 UporabnikPage uporanbikPage = new UporabnikPage(user);
                 uporanbikPage.Show();

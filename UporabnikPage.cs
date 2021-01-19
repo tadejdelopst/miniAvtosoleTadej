@@ -50,6 +50,7 @@ namespace miniProjekt___Avtosole {
             userPgNaslovTextbox.Text = neki.Naslov;
             userPgStarostTextbox.Text = Convert.ToString(neki.Starost);
             userPgTelefonTextbox.Text = neki.Telefon;
+            geslo1Textbox.Text = neki.Pass;
 
             updateKrajiList();
 
@@ -80,7 +81,7 @@ namespace miniProjekt___Avtosole {
 
         private void urediUserBtn_Click(object sender, EventArgs e) {
             int idKraja = krajceki[userPgKrajiCombobox.SelectedIndex].ID;
-
+            MessageBox.Show(neki.Pass);
             using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
                 con.Open();
 
@@ -129,6 +130,61 @@ namespace miniProjekt___Avtosole {
                     neki.Kraj_ID = readerS.GetInt32(6);
                 }
                 conS.Close();
+            }
+        }
+
+        private void userPgEditPassBtn_Click(object sender, EventArgs e) {
+            editPassPanel.Enabled = true;
+            userPgEditPassBtn.Enabled = false;
+            geslo1Textbox.Text = neki.Pass;
+        }
+
+        private void cancelEditPassBtn_Click(object sender, EventArgs e) {
+            geslo1Textbox.Clear();
+            geslo2Textbox.Clear();
+            editPassPanel.Enabled = false;
+            userPgEditPassBtn.Enabled = true;
+        }
+
+        private void ZamenjajGesloBtn_Click(object sender, EventArgs e) {
+            if (geslo1Textbox.Text == geslo2Textbox.Text) {
+                int idKraja = neki.Kraj_ID;
+
+                using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
+                    con.Open();
+
+                    NpgsqlCommand com = new NpgsqlCommand("SELECT urediUporabnika('" + neki.ID + "', '" + userPgEmailTextbox.Text + "', '" + geslo2Textbox.Text + "', '" + userPgNaslovTextbox.Text + "', '" + userPgStarostTextbox.Text + "', '" + userPgTelefonTextbox.Text + "', '" + idKraja + "')", con);
+                    NpgsqlDataReader reader = com.ExecuteReader();
+                    while (reader.Read()) {
+                        if (reader.GetString(0) == "USPESNO") {
+                            MessageBox.Show("Geslo posodobljeno!");
+                        } else {
+                            MessageBox.Show("Neuspesna zamenjava, Napaka!");
+                        }
+                    }
+                    con.Close();
+                    UporabnikNastavi();
+
+                    userPgEmailTextbox.Text = neki.Email;
+                    userPgNaslovTextbox.Text = neki.Naslov;
+                    userPgStarostTextbox.Text = Convert.ToString(neki.Starost);
+                    userPgTelefonTextbox.Text = neki.Telefon;
+                    urediPodatkePanel.Enabled = false;
+                    urejanjeUserBtn.Enabled = true;
+
+                    updateKrajiList();
+
+                    for (int i = 0; i < krajceki.Count; i++) {
+                        if (krajceki[i].ID == neki.Kraj_ID) {
+                            userPgKrajTextbox.Text = krajceki[i].Ime + ", " + krajceki[i].Posta;
+                        }
+                    }
+                }
+                geslo1Textbox.Clear();
+                geslo2Textbox.Clear();
+                userPgEditPassBtn.Enabled = true;
+                geslo1Textbox.Text = neki.Pass;
+                editPassPanel.Enabled = false;
             }
         }
     }

@@ -41,7 +41,16 @@ namespace miniProjekt___Avtosole {
             this.userPgEmailTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.urejanjeUserBtn = new System.Windows.Forms.Button();
+            this.editPassPanel = new System.Windows.Forms.Panel();
+            this.cancelEditPassBtn = new System.Windows.Forms.Button();
+            this.ZamenjajGesloBtn = new System.Windows.Forms.Button();
+            this.geslo2Textbox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.geslo1Textbox = new System.Windows.Forms.TextBox();
+            this.userPgEditPassBtn = new System.Windows.Forms.Button();
             this.urediPodatkePanel.SuspendLayout();
+            this.editPassPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // urediPodatkePanel
@@ -204,11 +213,90 @@ namespace miniProjekt___Avtosole {
             this.urejanjeUserBtn.UseVisualStyleBackColor = true;
             this.urejanjeUserBtn.Click += new System.EventHandler(this.urejanjeUserBtn_Click);
             // 
+            // editPassPanel
+            // 
+            this.editPassPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.editPassPanel.Controls.Add(this.cancelEditPassBtn);
+            this.editPassPanel.Controls.Add(this.ZamenjajGesloBtn);
+            this.editPassPanel.Controls.Add(this.geslo2Textbox);
+            this.editPassPanel.Controls.Add(this.label9);
+            this.editPassPanel.Controls.Add(this.label8);
+            this.editPassPanel.Controls.Add(this.geslo1Textbox);
+            this.editPassPanel.Enabled = false;
+            this.editPassPanel.Location = new System.Drawing.Point(323, 66);
+            this.editPassPanel.Name = "editPassPanel";
+            this.editPassPanel.Size = new System.Drawing.Size(243, 182);
+            this.editPassPanel.TabIndex = 2;
+            // 
+            // cancelEditPassBtn
+            // 
+            this.cancelEditPassBtn.Location = new System.Drawing.Point(123, 133);
+            this.cancelEditPassBtn.Name = "cancelEditPassBtn";
+            this.cancelEditPassBtn.Size = new System.Drawing.Size(107, 33);
+            this.cancelEditPassBtn.TabIndex = 30;
+            this.cancelEditPassBtn.Text = "Prekliči";
+            this.cancelEditPassBtn.UseVisualStyleBackColor = true;
+            this.cancelEditPassBtn.Click += new System.EventHandler(this.cancelEditPassBtn_Click);
+            // 
+            // ZamenjajGesloBtn
+            // 
+            this.ZamenjajGesloBtn.Location = new System.Drawing.Point(10, 133);
+            this.ZamenjajGesloBtn.Name = "ZamenjajGesloBtn";
+            this.ZamenjajGesloBtn.Size = new System.Drawing.Size(107, 33);
+            this.ZamenjajGesloBtn.TabIndex = 4;
+            this.ZamenjajGesloBtn.Text = "Vnesi";
+            this.ZamenjajGesloBtn.UseVisualStyleBackColor = true;
+            this.ZamenjajGesloBtn.Click += new System.EventHandler(this.ZamenjajGesloBtn_Click);
+            // 
+            // geslo2Textbox
+            // 
+            this.geslo2Textbox.Location = new System.Drawing.Point(51, 96);
+            this.geslo2Textbox.Name = "geslo2Textbox";
+            this.geslo2Textbox.Size = new System.Drawing.Size(152, 22);
+            this.geslo2Textbox.TabIndex = 29;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 25);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(82, 17);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Novo Geslo";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 76);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 17);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Potrdi Geslo:";
+            // 
+            // geslo1Textbox
+            // 
+            this.geslo1Textbox.Location = new System.Drawing.Point(51, 45);
+            this.geslo1Textbox.Name = "geslo1Textbox";
+            this.geslo1Textbox.Size = new System.Drawing.Size(152, 22);
+            this.geslo1Textbox.TabIndex = 27;
+            // 
+            // userPgEditPassBtn
+            // 
+            this.userPgEditPassBtn.Location = new System.Drawing.Point(374, 27);
+            this.userPgEditPassBtn.Name = "userPgEditPassBtn";
+            this.userPgEditPassBtn.Size = new System.Drawing.Size(107, 33);
+            this.userPgEditPassBtn.TabIndex = 3;
+            this.userPgEditPassBtn.Text = "Novo Geslo";
+            this.userPgEditPassBtn.UseVisualStyleBackColor = true;
+            this.userPgEditPassBtn.Click += new System.EventHandler(this.userPgEditPassBtn_Click);
+            // 
             // UporabnikPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.userPgEditPassBtn);
+            this.Controls.Add(this.editPassPanel);
             this.Controls.Add(this.urejanjeUserBtn);
             this.Controls.Add(this.urediPodatkePanel);
             this.Name = "UporabnikPage";
@@ -216,6 +304,8 @@ namespace miniProjekt___Avtosole {
             this.Load += new System.EventHandler(this.UporabnikPage_Load);
             this.urediPodatkePanel.ResumeLayout(false);
             this.urediPodatkePanel.PerformLayout();
+            this.editPassPanel.ResumeLayout(false);
+            this.editPassPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -239,5 +329,13 @@ namespace miniProjekt___Avtosole {
         private System.Windows.Forms.Button prekliciUrediUserBtn;
         private System.Windows.Forms.Button urediUserBtn;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel editPassPanel;
+        private System.Windows.Forms.Button ZamenjajGesloBtn;
+        private System.Windows.Forms.TextBox geslo2Textbox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox geslo1Textbox;
+        private System.Windows.Forms.Button userPgEditPassBtn;
+        private System.Windows.Forms.Button cancelEditPassBtn;
     }
 }
