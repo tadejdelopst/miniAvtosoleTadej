@@ -133,6 +133,8 @@ namespace miniProjekt___Avtosole {
             }
         }
 
+
+
         private void userPgEditPassBtn_Click(object sender, EventArgs e) {
             editPassPanel.Enabled = true;
             userPgEditPassBtn.Enabled = false;

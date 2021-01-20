@@ -22,7 +22,7 @@ namespace miniProjekt___Avtosole {
         }
 
         private void DodajIzpit_Load(object sender, EventArgs e) {
-
+            dodajIzpitBtn.Visible = true;
         }
 
         private void dodajIzpitBtn_Click(object sender, EventArgs e) {

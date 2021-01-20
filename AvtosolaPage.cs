@@ -14,6 +14,7 @@ namespace miniProjekt___Avtosole {
         Avtosola sola = new Avtosola();
         List<Kraj> krajceki = new List<Kraj>();
         List<Izpit> izpiti = new List<Izpit>();
+        List<Instruktor> instruktorji = new List<Instruktor>();
         string connect = baza.connect();
 
         public AvtosolaPage(Avtosola neki) {
@@ -84,7 +85,7 @@ namespace miniProjekt___Avtosole {
             urediPanel.Enabled = false;
             urediPodatkeBtn.Enabled = true;
 
-            int idKraja = krajceki[instruktorKrajCombobox.SelectedIndex].ID;
+            int idKraja = krajceki[urediKrajCombobox.SelectedIndex].ID;
             using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
                 con.Open();
 
@@ -116,6 +117,25 @@ namespace miniProjekt___Avtosole {
         }
 
         private void updateKrajiList() {
+            krajceki.Clear();
+            urediKrajCombobox.Items.Clear();
+
+            using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
+                con.Open();
+
+                NpgsqlCommand com = new NpgsqlCommand("SELECT * FROM vsiKrajiIzpis()", con);
+                NpgsqlDataReader reader = com.ExecuteReader();
+                while (reader.Read()) {
+                    urediKrajCombobox.Items.Add(reader.GetString(1) + " " + reader.GetString(2));
+
+                    Kraj hm = new Kraj(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+
+                    krajceki.Add(hm);
+                }
+                con.Close();
+            }
+        }
+        private void updateKrajiListInstruktorji() {
             krajceki.Clear();
             instruktorKrajCombobox.Items.Clear();
 
@@ -156,6 +176,26 @@ namespace miniProjekt___Avtosole {
             }
         }
 
+        private void updateInstruktorjiList() {
+            instruktorji.Clear();
+            urediINstruktorCombobox.Items.Clear();
+
+            using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
+                con.Open();
+
+                NpgsqlCommand com = new NpgsqlCommand("SELECT * FROM instruktorjipodatkiid('" + sola.ID + "')", con);
+                NpgsqlDataReader reader = com.ExecuteReader();
+                while (reader.Read()) {
+                    urediINstruktorCombobox.Items.Add(reader.GetString(1) + " " + reader.GetString(2));
+
+                    Instruktor hm = new Instruktor(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetInt32(5), reader.GetInt32(6));
+
+                    instruktorji.Add(hm);
+                }
+                con.Close();
+            }
+        }
+
         private void izpitiBtn_Click(object sender, EventArgs e) {
             urediIzpitiCombobox.SelectedIndex = -1;
             urediIzpitiCombobox.Text = "";
@@ -169,9 +209,26 @@ namespace miniProjekt___Avtosole {
         }
 
         private void instruktorjiBtn_Click(object sender, EventArgs e) {
+            updateInstruktorjiList();
+            urediINstruktorCombobox.SelectedIndex = -1;
+            urediINstruktorCombobox.Text = "";
+            urediInstruktorjiBtn.Visible = false;
+            dodajInstruktorjaBtn.Visible = true;
             instruktorjiPanel.Enabled = true;
             urediPanel.Enabled = false;
             izpitiPanel.Enabled = false;
+            ime.Enabled = false;
+            priimek.Enabled = false;
+            email.Enabled = false;
+            tel.Enabled = false;
+            kraj.Enabled = false;
+            kraj1.Enabled = false;
+            instruktorImeTxt.Enabled = false;
+            instruktorPriimekTxt.Enabled = false;
+            instruktorEmailTxt.Enabled = false;
+            instruktorTelefonTxt.Enabled = false;
+            instruktorKrajTxt.Enabled = false;
+            instruktorKrajCombobox.Enabled = false;
         }
 
         private void prekliciIzpitiBtn_Click(object sender, EventArgs e) {
@@ -245,6 +302,88 @@ namespace miniProjekt___Avtosole {
             DodajIzpit novIzpit = new DodajIzpit(sola.ID);
             novIzpit.Show();
             this.Hide();
+        }
+
+        private void urediINstruktorCombobox_SelectedIndexChanged(object sender, EventArgs e) {
+            updateKrajiListInstruktorji();
+            int IdInstruktorja = urediINstruktorCombobox.SelectedIndex;
+            dodajInstruktorjaBtn.Visible = false; ;
+            urediInstruktorjiBtn.Visible = true;
+            ime.Enabled = true;
+            priimek.Enabled = true;
+            email.Enabled = true;
+            tel.Enabled = true;
+            kraj.Enabled = true;
+            kraj1.Enabled = true;
+            instruktorImeTxt.Enabled = true;
+            instruktorPriimekTxt.Enabled = true;
+            instruktorEmailTxt.Enabled = true;
+            instruktorTelefonTxt.Enabled = true;
+            instruktorKrajTxt.Enabled = true;
+            instruktorKrajCombobox.Enabled = true;
+
+            instruktorImeTxt.Text =instruktorji[IdInstruktorja].Ime;
+            instruktorPriimekTxt.Text = instruktorji[IdInstruktorja].Priimek;
+            instruktorEmailTxt.Text = instruktorji[IdInstruktorja].Email;
+            instruktorTelefonTxt.Text = instruktorji[IdInstruktorja].Telefon;
+
+            updateKrajiList();
+
+            for (int i = 0; i < krajceki.Count; i++) {
+                if (instruktorji[IdInstruktorja].Kraj_ID == krajceki[i].ID) {
+                    instruktorKrajTxt.Text = krajceki[i].Ime + ", " + krajceki[i].Posta;
+                }
+            }
+        }
+
+        private void urediInstruktorjiBtn_Click(object sender, EventArgs e) {
+            int idI = urediINstruktorCombobox.SelectedIndex;
+            int idnstruktorja = instruktorji[idI].ID;
+
+            using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
+                con.Open();
+
+                NpgsqlCommand com = new NpgsqlCommand("SELECT urediInstruktorja('"+idnstruktorja+"', '"+instruktorImeTxt.Text+ "','" + instruktorPriimekTxt.Text + "','" + instruktorEmailTxt.Text + "','" + instruktorTelefonTxt.Text + "','" + Convert.ToInt32(instruktorKrajCombobox.SelectedIndex +1) + "') ", con);
+                NpgsqlDataReader reader = com.ExecuteReader();
+                while (reader.Read()) {
+                    if (reader.GetString(0) == "USPESNO") {
+                        MessageBox.Show("Urejevanje uspelo");
+                    } else {
+                        MessageBox.Show("Neuspesno, Napaka!");
+                    }
+                }
+                con.Close();
+                instruktorjiPanel.Enabled = false;
+                instruktorjiBtn.Enabled = true;
+
+                updateInstruktorjiList();
+                urediINstruktorCombobox.SelectedIndex = -1;
+                urediINstruktorCombobox.Text = "";
+                urediInstruktorjiBtn.Visible = false;
+                dodajInstruktorjaBtn.Visible = true;
+                urediPanel.Enabled = false;
+                izpitiPanel.Enabled = false;
+                ime.Enabled = false;
+                priimek.Enabled = false;
+                email.Enabled = false;
+                tel.Enabled = false;
+                kraj.Enabled = false;
+                kraj1.Enabled = false;
+                instruktorImeTxt.Enabled = false;
+                instruktorPriimekTxt.Enabled = false;
+                instruktorEmailTxt.Enabled = false;
+                instruktorTelefonTxt.Enabled = false;
+                instruktorKrajTxt.Enabled = false;
+                instruktorKrajCombobox.Enabled = false;
+
+                instruktorImeTxt.Clear();
+                instruktorPriimekTxt.Clear();
+                instruktorEmailTxt.Clear();
+                instruktorTelefonTxt.Clear();
+                instruktorKrajTxt.Clear();
+                instruktorKrajCombobox.Text = "";
+                instruktorKrajCombobox.SelectedIndex = -1;
+            }
         }
     }
 }

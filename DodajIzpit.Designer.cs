@@ -39,7 +39,6 @@ namespace miniProjekt___Avtosole {
             this.dodajIzpitBtn.TabIndex = 45;
             this.dodajIzpitBtn.Text = "Dodaj";
             this.dodajIzpitBtn.UseVisualStyleBackColor = true;
-            this.dodajIzpitBtn.Visible = false;
             this.dodajIzpitBtn.Click += new System.EventHandler(this.dodajIzpitBtn_Click);
             // 
             // label8
