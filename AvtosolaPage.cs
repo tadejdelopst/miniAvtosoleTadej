@@ -167,6 +167,7 @@ namespace miniProjekt___Avtosole {
             izpitiPanel.Enabled = false;
             izpitiBtn.Enabled = true;
             updateIzpitiList();
+            urediIzpitBtn.Visible = false;
             minStarostIzpitTxt.Clear();
             tipIzpitaTxt.Clear();
         }
@@ -180,6 +181,35 @@ namespace miniProjekt___Avtosole {
             int idIzpita = urediIzpitiCombobox.SelectedIndex;
             minStarostIzpitTxt.Text = Convert.ToString(izpiti[idIzpita].Starost_Min);
             tipIzpitaTxt.Text = izpiti[idIzpita].Tip;
+            urediIzpitBtn.Visible = true;
+        }
+
+        private void urediIzpitBtn_Click(object sender, EventArgs e) {
+            int idIzpita = urediIzpitiCombobox.SelectedIndex;
+            int avtosolaID = izpiti[idIzpita].Avtosola_ID;
+            int idI = izpiti[idIzpita].ID;
+
+            using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
+                con.Open();
+
+                NpgsqlCommand com = new NpgsqlCommand("SELECT urediIzpit ('"+idI+"', '"+tipIzpitaTxt.Text+"', '"+Convert.ToInt32(minStarostIzpitTxt.Text)+"')", con);
+                NpgsqlDataReader reader = com.ExecuteReader();
+                while (reader.Read()) {
+                    if (reader.GetString(0) == "USPESNO") {
+                        MessageBox.Show("Urejevanje uspelo");
+                    } else {
+                        MessageBox.Show("Neuspesno, Napaka!");
+                    }
+                }
+                con.Close();
+
+                updateIzpitiList();
+
+                izpitiPanel.Enabled = false;
+                izpitiBtn.Enabled = true;
+                minStarostIzpitTxt.Clear();
+                tipIzpitaTxt.Clear();
+            }
         }
     }
 }

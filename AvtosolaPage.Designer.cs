@@ -52,6 +52,8 @@ namespace miniProjekt___Avtosole {
             this.tipIzpitaTxt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.minStarostIzpitTxt = new System.Windows.Forms.TextBox();
+            this.urediIzpitBtn = new System.Windows.Forms.Button();
+            this.dodajIzpitBtn = new System.Windows.Forms.Button();
             this.urediPanel.SuspendLayout();
             this.izpitiPanel.SuspendLayout();
             this.instruktorjiPanel.SuspendLayout();
@@ -212,6 +214,8 @@ namespace miniProjekt___Avtosole {
             // izpitiPanel
             // 
             this.izpitiPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.izpitiPanel.Controls.Add(this.dodajIzpitBtn);
+            this.izpitiPanel.Controls.Add(this.urediIzpitBtn);
             this.izpitiPanel.Controls.Add(this.label8);
             this.izpitiPanel.Controls.Add(this.prekliciIzpitiBtn);
             this.izpitiPanel.Controls.Add(this.tipIzpitaTxt);
@@ -324,6 +328,27 @@ namespace miniProjekt___Avtosole {
             this.minStarostIzpitTxt.Size = new System.Drawing.Size(100, 22);
             this.minStarostIzpitTxt.TabIndex = 38;
             // 
+            // urediIzpitBtn
+            // 
+            this.urediIzpitBtn.Location = new System.Drawing.Point(24, 193);
+            this.urediIzpitBtn.Name = "urediIzpitBtn";
+            this.urediIzpitBtn.Size = new System.Drawing.Size(110, 40);
+            this.urediIzpitBtn.TabIndex = 39;
+            this.urediIzpitBtn.Text = "Uredi";
+            this.urediIzpitBtn.UseVisualStyleBackColor = true;
+            this.urediIzpitBtn.Visible = false;
+            this.urediIzpitBtn.Click += new System.EventHandler(this.urediIzpitBtn_Click);
+            // 
+            // dodajIzpitBtn
+            // 
+            this.dodajIzpitBtn.Location = new System.Drawing.Point(79, 147);
+            this.dodajIzpitBtn.Name = "dodajIzpitBtn";
+            this.dodajIzpitBtn.Size = new System.Drawing.Size(110, 40);
+            this.dodajIzpitBtn.TabIndex = 40;
+            this.dodajIzpitBtn.Text = "Dodaj";
+            this.dodajIzpitBtn.UseVisualStyleBackColor = true;
+            this.dodajIzpitBtn.Visible = false;
+            // 
             // AvtosolaPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -378,5 +403,7 @@ namespace miniProjekt___Avtosole {
         private System.Windows.Forms.TextBox tipIzpitaTxt;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox minStarostIzpitTxt;
+        private System.Windows.Forms.Button urediIzpitBtn;
+        private System.Windows.Forms.Button dodajIzpitBtn;
     }
 }
