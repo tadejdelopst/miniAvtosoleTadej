@@ -107,6 +107,12 @@
       <DependentUpon>AvtosolaPage.cs</DependentUpon>
     </Compile>
     <Compile Include="baza.cs" />
+    <Compile Include="DodajIzpit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajIzpit.Designer.cs">
+      <DependentUpon>DodajIzpit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Izpit.cs" />
     <Compile Include="Kraj.cs" />
     <Compile Include="Prijava.cs">
@@ -138,6 +144,9 @@
     </Compile>
     <EmbeddedResource Include="AvtosolaPage.resx">
       <DependentUpon>AvtosolaPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajIzpit.resx">
+      <DependentUpon>DodajIzpit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>

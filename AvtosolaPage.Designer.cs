@@ -330,7 +330,7 @@ namespace miniProjekt___Avtosole {
             // 
             // urediIzpitBtn
             // 
-            this.urediIzpitBtn.Location = new System.Drawing.Point(24, 193);
+            this.urediIzpitBtn.Location = new System.Drawing.Point(76, 147);
             this.urediIzpitBtn.Name = "urediIzpitBtn";
             this.urediIzpitBtn.Size = new System.Drawing.Size(110, 40);
             this.urediIzpitBtn.TabIndex = 39;
@@ -341,13 +341,14 @@ namespace miniProjekt___Avtosole {
             // 
             // dodajIzpitBtn
             // 
-            this.dodajIzpitBtn.Location = new System.Drawing.Point(79, 147);
+            this.dodajIzpitBtn.Location = new System.Drawing.Point(24, 193);
             this.dodajIzpitBtn.Name = "dodajIzpitBtn";
             this.dodajIzpitBtn.Size = new System.Drawing.Size(110, 40);
             this.dodajIzpitBtn.TabIndex = 40;
             this.dodajIzpitBtn.Text = "Dodaj";
             this.dodajIzpitBtn.UseVisualStyleBackColor = true;
             this.dodajIzpitBtn.Visible = false;
+            this.dodajIzpitBtn.Click += new System.EventHandler(this.dodajIzpitBtn_Click);
             // 
             // AvtosolaPage
             // 

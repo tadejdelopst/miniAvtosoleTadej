@@ -15,15 +15,22 @@ namespace miniProjekt___Avtosole {
         List<Kraj> krajceki = new List<Kraj>();
         List<Izpit> izpiti = new List<Izpit>();
         string connect = baza.connect();
+
         public AvtosolaPage(Avtosola neki) {
             InitializeComponent();
             sola = neki;
         }
 
         private void AvtosolaPage_Load(object sender, EventArgs e) {
+            label8.Enabled = false;
+            label9.Enabled = false;
+            minStarostIzpitTxt.Enabled = false;
+            tipIzpitaTxt.Enabled = false;
+            MessageBox.Show(Convert.ToString(sola.ID));
             avtoEmailTxt.Text = sola.Email;
             avtoImeTxt.Text = sola.Ime;
             avtoTelTxt.Text = sola.Telefon;
+
 
             updateKrajiList();
 
@@ -150,7 +157,11 @@ namespace miniProjekt___Avtosole {
         }
 
         private void izpitiBtn_Click(object sender, EventArgs e) {
+            urediIzpitiCombobox.SelectedIndex = -1;
+            urediIzpitiCombobox.Text = "";
             izpitiPanel.Enabled = true;
+            dodajIzpitBtn.Enabled = true;
+            dodajIzpitBtn.Visible = true;
             urediPanel.Enabled = false;
             instruktorjiPanel.Enabled = false;
             izpitiBtn.Enabled = false;
@@ -167,7 +178,14 @@ namespace miniProjekt___Avtosole {
             izpitiPanel.Enabled = false;
             izpitiBtn.Enabled = true;
             updateIzpitiList();
+            dodajIzpitBtn.Visible = false;
             urediIzpitBtn.Visible = false;
+            label8.Enabled = false;
+            label9.Enabled = false;
+            minStarostIzpitTxt.Enabled = false;
+            tipIzpitaTxt.Enabled = false;
+            urediIzpitiCombobox.SelectedIndex = -1;
+            urediIzpitiCombobox.Text = "";
             minStarostIzpitTxt.Clear();
             tipIzpitaTxt.Clear();
         }
@@ -178,8 +196,13 @@ namespace miniProjekt___Avtosole {
         }
 
         private void urediIzpitiCombobox_SelectedIndexChanged(object sender, EventArgs e) {
+            label8.Enabled = true;
+            label9.Enabled = true;
+            minStarostIzpitTxt.Enabled = true;
+            tipIzpitaTxt.Enabled = true;
             int idIzpita = urediIzpitiCombobox.SelectedIndex;
             minStarostIzpitTxt.Text = Convert.ToString(izpiti[idIzpita].Starost_Min);
+            dodajIzpitBtn.Visible = false;
             tipIzpitaTxt.Text = izpiti[idIzpita].Tip;
             urediIzpitBtn.Visible = true;
         }
@@ -207,9 +230,21 @@ namespace miniProjekt___Avtosole {
 
                 izpitiPanel.Enabled = false;
                 izpitiBtn.Enabled = true;
+                urediIzpitiCombobox.SelectedIndex = -1;
+                urediIzpitiCombobox.Text = "";
+                label8.Enabled = false;
+                label9.Enabled = false;
+                minStarostIzpitTxt.Enabled = false;
+                tipIzpitaTxt.Enabled = false;
                 minStarostIzpitTxt.Clear();
                 tipIzpitaTxt.Clear();
             }
+        }
+
+        private void dodajIzpitBtn_Click(object sender, EventArgs e) {
+            DodajIzpit novIzpit = new DodajIzpit(sola.ID);
+            novIzpit.Show();
+            this.Hide();
         }
     }
 }
