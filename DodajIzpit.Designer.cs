@@ -29,11 +29,12 @@ namespace miniProjekt___Avtosole {
             this.tipIzpitaTxt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.minStarostIzpitTxt = new System.Windows.Forms.TextBox();
+            this.preklicBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dodajIzpitBtn
             // 
-            this.dodajIzpitBtn.Location = new System.Drawing.Point(93, 105);
+            this.dodajIzpitBtn.Location = new System.Drawing.Point(42, 106);
             this.dodajIzpitBtn.Name = "dodajIzpitBtn";
             this.dodajIzpitBtn.Size = new System.Drawing.Size(110, 40);
             this.dodajIzpitBtn.TabIndex = 45;
@@ -73,11 +74,22 @@ namespace miniProjekt___Avtosole {
             this.minStarostIzpitTxt.Size = new System.Drawing.Size(100, 22);
             this.minStarostIzpitTxt.TabIndex = 44;
             // 
+            // preklicBtn
+            // 
+            this.preklicBtn.Location = new System.Drawing.Point(169, 106);
+            this.preklicBtn.Name = "preklicBtn";
+            this.preklicBtn.Size = new System.Drawing.Size(110, 40);
+            this.preklicBtn.TabIndex = 46;
+            this.preklicBtn.Text = "Prekliči";
+            this.preklicBtn.UseVisualStyleBackColor = true;
+            this.preklicBtn.Click += new System.EventHandler(this.preklicBtn_Click);
+            // 
             // DodajIzpit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(318, 204);
+            this.Controls.Add(this.preklicBtn);
             this.Controls.Add(this.dodajIzpitBtn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tipIzpitaTxt);
@@ -98,5 +110,6 @@ namespace miniProjekt___Avtosole {
         private System.Windows.Forms.TextBox tipIzpitaTxt;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox minStarostIzpitTxt;
+        private System.Windows.Forms.Button preklicBtn;
     }
 }

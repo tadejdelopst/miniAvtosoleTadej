@@ -49,6 +49,7 @@ namespace miniProjekt___Avtosole {
             this.label8 = new System.Windows.Forms.Label();
             this.geslo1Textbox = new System.Windows.Forms.TextBox();
             this.userPgEditPassBtn = new System.Windows.Forms.Button();
+            this.odjavaBtn = new System.Windows.Forms.Button();
             this.urediPodatkePanel.SuspendLayout();
             this.editPassPanel.SuspendLayout();
             this.SuspendLayout();
@@ -254,6 +255,7 @@ namespace miniProjekt___Avtosole {
             this.geslo2Textbox.Name = "geslo2Textbox";
             this.geslo2Textbox.Size = new System.Drawing.Size(152, 22);
             this.geslo2Textbox.TabIndex = 29;
+            this.geslo2Textbox.TextChanged += new System.EventHandler(this.geslo2Textbox_TextChanged);
             // 
             // label9
             // 
@@ -290,11 +292,22 @@ namespace miniProjekt___Avtosole {
             this.userPgEditPassBtn.UseVisualStyleBackColor = true;
             this.userPgEditPassBtn.Click += new System.EventHandler(this.userPgEditPassBtn_Click);
             // 
+            // odjavaBtn
+            // 
+            this.odjavaBtn.Location = new System.Drawing.Point(346, 369);
+            this.odjavaBtn.Name = "odjavaBtn";
+            this.odjavaBtn.Size = new System.Drawing.Size(135, 46);
+            this.odjavaBtn.TabIndex = 4;
+            this.odjavaBtn.Text = "Odjava";
+            this.odjavaBtn.UseVisualStyleBackColor = true;
+            this.odjavaBtn.Click += new System.EventHandler(this.odjavaBtn_Click);
+            // 
             // UporabnikPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.odjavaBtn);
             this.Controls.Add(this.userPgEditPassBtn);
             this.Controls.Add(this.editPassPanel);
             this.Controls.Add(this.urejanjeUserBtn);
@@ -337,5 +350,6 @@ namespace miniProjekt___Avtosole {
         private System.Windows.Forms.TextBox geslo1Textbox;
         private System.Windows.Forms.Button userPgEditPassBtn;
         private System.Windows.Forms.Button cancelEditPassBtn;
+        private System.Windows.Forms.Button odjavaBtn;
     }
 }

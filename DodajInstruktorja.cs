@@ -86,5 +86,12 @@ namespace miniProjekt___Avtosole {
                 }
             }
         }
+
+        private void prekliciBtn_Click(object sender, EventArgs e) {
+            AvtosolakNastavi();
+            AvtosolaPage avto = new AvtosolaPage(sola);
+            avto.Show();
+            this.Hide();
+        }
     }
 }

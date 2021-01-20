@@ -33,41 +33,42 @@ namespace miniProjekt___Avtosole {
             this.avtoEmailTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.urediPanel = new System.Windows.Forms.Panel();
-            this.urediAvtosolaBtn = new System.Windows.Forms.Button();
-            this.urediPodatkeBtn = new System.Windows.Forms.Button();
-            this.preklicUrediBtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.urediKrajCombobox = new System.Windows.Forms.ComboBox();
             this.urediKrajTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.preklicUrediBtn = new System.Windows.Forms.Button();
+            this.urediAvtosolaBtn = new System.Windows.Forms.Button();
+            this.urediPodatkeBtn = new System.Windows.Forms.Button();
             this.instruktorjiBtn = new System.Windows.Forms.Button();
             this.izpitiBtn = new System.Windows.Forms.Button();
             this.izpitiPanel = new System.Windows.Forms.Panel();
-            this.instruktorjiPanel = new System.Windows.Forms.Panel();
-            this.urediINstruktorCombobox = new System.Windows.Forms.ComboBox();
-            this.urediIzpitiCombobox = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.prekliciIzpitiBtn = new System.Windows.Forms.Button();
-            this.prekliciInstruktorjiBtn = new System.Windows.Forms.Button();
+            this.dodajIzpitBtn = new System.Windows.Forms.Button();
+            this.urediIzpitBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.prekliciIzpitiBtn = new System.Windows.Forms.Button();
             this.tipIzpitaTxt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.minStarostIzpitTxt = new System.Windows.Forms.TextBox();
-            this.urediIzpitBtn = new System.Windows.Forms.Button();
-            this.dodajIzpitBtn = new System.Windows.Forms.Button();
+            this.urediIzpitiCombobox = new System.Windows.Forms.ComboBox();
+            this.instruktorjiPanel = new System.Windows.Forms.Panel();
+            this.dodajInstruktorjaBtn = new System.Windows.Forms.Button();
+            this.instruktorKrajTxt = new System.Windows.Forms.TextBox();
+            this.urediInstruktorjiBtn = new System.Windows.Forms.Button();
+            this.instruktorTelefonTxt = new System.Windows.Forms.TextBox();
             this.tel = new System.Windows.Forms.Label();
+            this.instruktorImeTxt = new System.Windows.Forms.TextBox();
+            this.prekliciInstruktorjiBtn = new System.Windows.Forms.Button();
+            this.instruktorEmailTxt = new System.Windows.Forms.TextBox();
             this.ime = new System.Windows.Forms.Label();
+            this.instruktorPriimekTxt = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.kraj = new System.Windows.Forms.Label();
+            this.urediINstruktorCombobox = new System.Windows.Forms.ComboBox();
             this.priimek = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
-            this.instruktorTelefonTxt = new System.Windows.Forms.TextBox();
-            this.instruktorImeTxt = new System.Windows.Forms.TextBox();
-            this.instruktorEmailTxt = new System.Windows.Forms.TextBox();
-            this.instruktorPriimekTxt = new System.Windows.Forms.TextBox();
-            this.instruktorKrajTxt = new System.Windows.Forms.TextBox();
-            this.dodajInstruktorjaBtn = new System.Windows.Forms.Button();
-            this.urediInstruktorjiBtn = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.urediKrajCombobox = new System.Windows.Forms.ComboBox();
+            this.odjavaBtn = new System.Windows.Forms.Button();
             this.urediPanel.SuspendLayout();
             this.izpitiPanel.SuspendLayout();
             this.instruktorjiPanel.SuspendLayout();
@@ -156,38 +157,25 @@ namespace miniProjekt___Avtosole {
             this.urediPanel.Enabled = false;
             this.urediPanel.Location = new System.Drawing.Point(32, 96);
             this.urediPanel.Name = "urediPanel";
-            this.urediPanel.Size = new System.Drawing.Size(269, 271);
+            this.urediPanel.Size = new System.Drawing.Size(269, 289);
             this.urediPanel.TabIndex = 31;
             // 
-            // urediAvtosolaBtn
+            // label6
             // 
-            this.urediAvtosolaBtn.Location = new System.Drawing.Point(24, 193);
-            this.urediAvtosolaBtn.Name = "urediAvtosolaBtn";
-            this.urediAvtosolaBtn.Size = new System.Drawing.Size(110, 40);
-            this.urediAvtosolaBtn.TabIndex = 31;
-            this.urediAvtosolaBtn.Text = "Uredi";
-            this.urediAvtosolaBtn.UseVisualStyleBackColor = true;
-            this.urediAvtosolaBtn.Click += new System.EventHandler(this.urediAvtosolaBtn_Click);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(58, 142);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 17);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Kraj:";
             // 
-            // urediPodatkeBtn
+            // urediKrajCombobox
             // 
-            this.urediPodatkeBtn.Location = new System.Drawing.Point(107, 50);
-            this.urediPodatkeBtn.Name = "urediPodatkeBtn";
-            this.urediPodatkeBtn.Size = new System.Drawing.Size(110, 40);
-            this.urediPodatkeBtn.TabIndex = 32;
-            this.urediPodatkeBtn.Text = "Uredi Podatke";
-            this.urediPodatkeBtn.UseVisualStyleBackColor = true;
-            this.urediPodatkeBtn.Click += new System.EventHandler(this.urediPodatkeBtn_Click);
-            // 
-            // preklicUrediBtn
-            // 
-            this.preklicUrediBtn.Location = new System.Drawing.Point(140, 193);
-            this.preklicUrediBtn.Name = "preklicUrediBtn";
-            this.preklicUrediBtn.Size = new System.Drawing.Size(110, 40);
-            this.preklicUrediBtn.TabIndex = 32;
-            this.preklicUrediBtn.Text = "Prekliči";
-            this.preklicUrediBtn.UseVisualStyleBackColor = true;
-            this.preklicUrediBtn.Click += new System.EventHandler(this.preklicUrediBtn_Click);
+            this.urediKrajCombobox.FormattingEnabled = true;
+            this.urediKrajCombobox.Location = new System.Drawing.Point(98, 139);
+            this.urediKrajCombobox.Name = "urediKrajCombobox";
+            this.urediKrajCombobox.Size = new System.Drawing.Size(152, 24);
+            this.urediKrajCombobox.TabIndex = 35;
             // 
             // urediKrajTxt
             // 
@@ -204,6 +192,36 @@ namespace miniProjekt___Avtosole {
             this.label3.Size = new System.Drawing.Size(37, 17);
             this.label3.TabIndex = 33;
             this.label3.Text = "Kraj:";
+            // 
+            // preklicUrediBtn
+            // 
+            this.preklicUrediBtn.Location = new System.Drawing.Point(140, 180);
+            this.preklicUrediBtn.Name = "preklicUrediBtn";
+            this.preklicUrediBtn.Size = new System.Drawing.Size(110, 40);
+            this.preklicUrediBtn.TabIndex = 32;
+            this.preklicUrediBtn.Text = "Prekliči";
+            this.preklicUrediBtn.UseVisualStyleBackColor = true;
+            this.preklicUrediBtn.Click += new System.EventHandler(this.preklicUrediBtn_Click);
+            // 
+            // urediAvtosolaBtn
+            // 
+            this.urediAvtosolaBtn.Location = new System.Drawing.Point(24, 180);
+            this.urediAvtosolaBtn.Name = "urediAvtosolaBtn";
+            this.urediAvtosolaBtn.Size = new System.Drawing.Size(110, 40);
+            this.urediAvtosolaBtn.TabIndex = 31;
+            this.urediAvtosolaBtn.Text = "Uredi";
+            this.urediAvtosolaBtn.UseVisualStyleBackColor = true;
+            this.urediAvtosolaBtn.Click += new System.EventHandler(this.urediAvtosolaBtn_Click);
+            // 
+            // urediPodatkeBtn
+            // 
+            this.urediPodatkeBtn.Location = new System.Drawing.Point(107, 50);
+            this.urediPodatkeBtn.Name = "urediPodatkeBtn";
+            this.urediPodatkeBtn.Size = new System.Drawing.Size(110, 40);
+            this.urediPodatkeBtn.TabIndex = 32;
+            this.urediPodatkeBtn.Text = "Uredi Podatke";
+            this.urediPodatkeBtn.UseVisualStyleBackColor = true;
+            this.urediPodatkeBtn.Click += new System.EventHandler(this.urediPodatkeBtn_Click);
             // 
             // instruktorjiBtn
             // 
@@ -240,8 +258,91 @@ namespace miniProjekt___Avtosole {
             this.izpitiPanel.Enabled = false;
             this.izpitiPanel.Location = new System.Drawing.Point(307, 96);
             this.izpitiPanel.Name = "izpitiPanel";
-            this.izpitiPanel.Size = new System.Drawing.Size(257, 271);
+            this.izpitiPanel.Size = new System.Drawing.Size(257, 289);
             this.izpitiPanel.TabIndex = 37;
+            this.izpitiPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.izpitiPanel_Paint);
+            // 
+            // dodajIzpitBtn
+            // 
+            this.dodajIzpitBtn.Location = new System.Drawing.Point(24, 193);
+            this.dodajIzpitBtn.Name = "dodajIzpitBtn";
+            this.dodajIzpitBtn.Size = new System.Drawing.Size(110, 40);
+            this.dodajIzpitBtn.TabIndex = 40;
+            this.dodajIzpitBtn.Text = "Dodaj";
+            this.dodajIzpitBtn.UseVisualStyleBackColor = true;
+            this.dodajIzpitBtn.Visible = false;
+            this.dodajIzpitBtn.Click += new System.EventHandler(this.dodajIzpitBtn_Click);
+            // 
+            // urediIzpitBtn
+            // 
+            this.urediIzpitBtn.Location = new System.Drawing.Point(76, 147);
+            this.urediIzpitBtn.Name = "urediIzpitBtn";
+            this.urediIzpitBtn.Size = new System.Drawing.Size(110, 40);
+            this.urediIzpitBtn.TabIndex = 39;
+            this.urediIzpitBtn.Text = "Uredi";
+            this.urediIzpitBtn.UseVisualStyleBackColor = true;
+            this.urediIzpitBtn.Visible = false;
+            this.urediIzpitBtn.Click += new System.EventHandler(this.urediIzpitBtn_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(63, 88);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 17);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "Tip:";
+            // 
+            // prekliciIzpitiBtn
+            // 
+            this.prekliciIzpitiBtn.Location = new System.Drawing.Point(140, 193);
+            this.prekliciIzpitiBtn.Name = "prekliciIzpitiBtn";
+            this.prekliciIzpitiBtn.Size = new System.Drawing.Size(110, 40);
+            this.prekliciIzpitiBtn.TabIndex = 33;
+            this.prekliciIzpitiBtn.Text = "Prekliči";
+            this.prekliciIzpitiBtn.UseVisualStyleBackColor = true;
+            this.prekliciIzpitiBtn.Click += new System.EventHandler(this.prekliciIzpitiBtn_Click);
+            // 
+            // tipIzpitaTxt
+            // 
+            this.tipIzpitaTxt.Location = new System.Drawing.Point(101, 86);
+            this.tipIzpitaTxt.Name = "tipIzpitaTxt";
+            this.tipIzpitaTxt.Size = new System.Drawing.Size(100, 22);
+            this.tipIzpitaTxt.TabIndex = 36;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 117);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 17);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Min Starost:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Vsi Izpiti:";
+            // 
+            // minStarostIzpitTxt
+            // 
+            this.minStarostIzpitTxt.Location = new System.Drawing.Point(101, 114);
+            this.minStarostIzpitTxt.Name = "minStarostIzpitTxt";
+            this.minStarostIzpitTxt.Size = new System.Drawing.Size(100, 22);
+            this.minStarostIzpitTxt.TabIndex = 38;
+            // 
+            // urediIzpitiCombobox
+            // 
+            this.urediIzpitiCombobox.FormattingEnabled = true;
+            this.urediIzpitiCombobox.Location = new System.Drawing.Point(55, 32);
+            this.urediIzpitiCombobox.Name = "urediIzpitiCombobox";
+            this.urediIzpitiCombobox.Size = new System.Drawing.Size(178, 24);
+            this.urediIzpitiCombobox.TabIndex = 1;
+            this.urediIzpitiCombobox.SelectedIndexChanged += new System.EventHandler(this.urediIzpitiCombobox_SelectedIndexChanged);
             // 
             // instruktorjiPanel
             // 
@@ -269,51 +370,57 @@ namespace miniProjekt___Avtosole {
             this.instruktorjiPanel.Size = new System.Drawing.Size(257, 368);
             this.instruktorjiPanel.TabIndex = 38;
             // 
-            // urediINstruktorCombobox
+            // dodajInstruktorjaBtn
             // 
-            this.urediINstruktorCombobox.FormattingEnabled = true;
-            this.urediINstruktorCombobox.Location = new System.Drawing.Point(64, 32);
-            this.urediINstruktorCombobox.Name = "urediINstruktorCombobox";
-            this.urediINstruktorCombobox.Size = new System.Drawing.Size(178, 24);
-            this.urediINstruktorCombobox.TabIndex = 0;
-            this.urediINstruktorCombobox.SelectedIndexChanged += new System.EventHandler(this.urediINstruktorCombobox_SelectedIndexChanged);
+            this.dodajInstruktorjaBtn.Location = new System.Drawing.Point(12, 305);
+            this.dodajInstruktorjaBtn.Name = "dodajInstruktorjaBtn";
+            this.dodajInstruktorjaBtn.Size = new System.Drawing.Size(110, 40);
+            this.dodajInstruktorjaBtn.TabIndex = 42;
+            this.dodajInstruktorjaBtn.Text = "Dodaj";
+            this.dodajInstruktorjaBtn.UseVisualStyleBackColor = true;
+            this.dodajInstruktorjaBtn.Visible = false;
+            this.dodajInstruktorjaBtn.Click += new System.EventHandler(this.dodajInstruktorjaBtn_Click);
             // 
-            // urediIzpitiCombobox
+            // instruktorKrajTxt
             // 
-            this.urediIzpitiCombobox.FormattingEnabled = true;
-            this.urediIzpitiCombobox.Location = new System.Drawing.Point(55, 32);
-            this.urediIzpitiCombobox.Name = "urediIzpitiCombobox";
-            this.urediIzpitiCombobox.Size = new System.Drawing.Size(178, 24);
-            this.urediIzpitiCombobox.TabIndex = 1;
-            this.urediIzpitiCombobox.SelectedIndexChanged += new System.EventHandler(this.urediIzpitiCombobox_SelectedIndexChanged);
+            this.instruktorKrajTxt.Location = new System.Drawing.Point(84, 198);
+            this.instruktorKrajTxt.Name = "instruktorKrajTxt";
+            this.instruktorKrajTxt.Size = new System.Drawing.Size(147, 22);
+            this.instruktorKrajTxt.TabIndex = 40;
             // 
-            // label4
+            // urediInstruktorjiBtn
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 17);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Vsi Izpiti:";
+            this.urediInstruktorjiBtn.Location = new System.Drawing.Point(64, 259);
+            this.urediInstruktorjiBtn.Name = "urediInstruktorjiBtn";
+            this.urediInstruktorjiBtn.Size = new System.Drawing.Size(110, 40);
+            this.urediInstruktorjiBtn.TabIndex = 41;
+            this.urediInstruktorjiBtn.Text = "Uredi";
+            this.urediInstruktorjiBtn.UseVisualStyleBackColor = true;
+            this.urediInstruktorjiBtn.Visible = false;
+            this.urediInstruktorjiBtn.Click += new System.EventHandler(this.urediInstruktorjiBtn_Click);
             // 
-            // label7
+            // instruktorTelefonTxt
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 17);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Vsi inštruktorji:";
+            this.instruktorTelefonTxt.Location = new System.Drawing.Point(84, 167);
+            this.instruktorTelefonTxt.Name = "instruktorTelefonTxt";
+            this.instruktorTelefonTxt.Size = new System.Drawing.Size(147, 22);
+            this.instruktorTelefonTxt.TabIndex = 38;
             // 
-            // prekliciIzpitiBtn
+            // tel
             // 
-            this.prekliciIzpitiBtn.Location = new System.Drawing.Point(140, 193);
-            this.prekliciIzpitiBtn.Name = "prekliciIzpitiBtn";
-            this.prekliciIzpitiBtn.Size = new System.Drawing.Size(110, 40);
-            this.prekliciIzpitiBtn.TabIndex = 33;
-            this.prekliciIzpitiBtn.Text = "Prekliči";
-            this.prekliciIzpitiBtn.UseVisualStyleBackColor = true;
-            this.prekliciIzpitiBtn.Click += new System.EventHandler(this.prekliciIzpitiBtn_Click);
+            this.tel.AutoSize = true;
+            this.tel.Location = new System.Drawing.Point(14, 170);
+            this.tel.Name = "tel";
+            this.tel.Size = new System.Drawing.Size(60, 17);
+            this.tel.TabIndex = 39;
+            this.tel.Text = "Telefon:";
+            // 
+            // instruktorImeTxt
+            // 
+            this.instruktorImeTxt.Location = new System.Drawing.Point(84, 81);
+            this.instruktorImeTxt.Name = "instruktorImeTxt";
+            this.instruktorImeTxt.Size = new System.Drawing.Size(147, 22);
+            this.instruktorImeTxt.TabIndex = 35;
             // 
             // prekliciInstruktorjiBtn
             // 
@@ -325,68 +432,12 @@ namespace miniProjekt___Avtosole {
             this.prekliciInstruktorjiBtn.UseVisualStyleBackColor = true;
             this.prekliciInstruktorjiBtn.Click += new System.EventHandler(this.prekliciInstruktorjiBtn_Click);
             // 
-            // label8
+            // instruktorEmailTxt
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(63, 88);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 17);
-            this.label8.TabIndex = 35;
-            this.label8.Text = "Tip:";
-            // 
-            // tipIzpitaTxt
-            // 
-            this.tipIzpitaTxt.Location = new System.Drawing.Point(101, 86);
-            this.tipIzpitaTxt.Name = "tipIzpitaTxt";
-            this.tipIzpitaTxt.Size = new System.Drawing.Size(100, 22);
-            this.tipIzpitaTxt.TabIndex = 36;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 117);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 17);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "Min Starost:";
-            // 
-            // minStarostIzpitTxt
-            // 
-            this.minStarostIzpitTxt.Location = new System.Drawing.Point(101, 114);
-            this.minStarostIzpitTxt.Name = "minStarostIzpitTxt";
-            this.minStarostIzpitTxt.Size = new System.Drawing.Size(100, 22);
-            this.minStarostIzpitTxt.TabIndex = 38;
-            // 
-            // urediIzpitBtn
-            // 
-            this.urediIzpitBtn.Location = new System.Drawing.Point(76, 147);
-            this.urediIzpitBtn.Name = "urediIzpitBtn";
-            this.urediIzpitBtn.Size = new System.Drawing.Size(110, 40);
-            this.urediIzpitBtn.TabIndex = 39;
-            this.urediIzpitBtn.Text = "Uredi";
-            this.urediIzpitBtn.UseVisualStyleBackColor = true;
-            this.urediIzpitBtn.Visible = false;
-            this.urediIzpitBtn.Click += new System.EventHandler(this.urediIzpitBtn_Click);
-            // 
-            // dodajIzpitBtn
-            // 
-            this.dodajIzpitBtn.Location = new System.Drawing.Point(24, 193);
-            this.dodajIzpitBtn.Name = "dodajIzpitBtn";
-            this.dodajIzpitBtn.Size = new System.Drawing.Size(110, 40);
-            this.dodajIzpitBtn.TabIndex = 40;
-            this.dodajIzpitBtn.Text = "Dodaj";
-            this.dodajIzpitBtn.UseVisualStyleBackColor = true;
-            this.dodajIzpitBtn.Visible = false;
-            this.dodajIzpitBtn.Click += new System.EventHandler(this.dodajIzpitBtn_Click);
-            // 
-            // tel
-            // 
-            this.tel.AutoSize = true;
-            this.tel.Location = new System.Drawing.Point(14, 170);
-            this.tel.Name = "tel";
-            this.tel.Size = new System.Drawing.Size(60, 17);
-            this.tel.TabIndex = 39;
-            this.tel.Text = "Telefon:";
+            this.instruktorEmailTxt.Location = new System.Drawing.Point(84, 137);
+            this.instruktorEmailTxt.Name = "instruktorEmailTxt";
+            this.instruktorEmailTxt.Size = new System.Drawing.Size(147, 22);
+            this.instruktorEmailTxt.TabIndex = 37;
             // 
             // ime
             // 
@@ -397,6 +448,22 @@ namespace miniProjekt___Avtosole {
             this.ime.TabIndex = 35;
             this.ime.Text = "Ime:";
             // 
+            // instruktorPriimekTxt
+            // 
+            this.instruktorPriimekTxt.Location = new System.Drawing.Point(84, 111);
+            this.instruktorPriimekTxt.Name = "instruktorPriimekTxt";
+            this.instruktorPriimekTxt.Size = new System.Drawing.Size(147, 22);
+            this.instruktorPriimekTxt.TabIndex = 36;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 17);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Vsi inštruktorji:";
+            // 
             // kraj
             // 
             this.kraj.AutoSize = true;
@@ -405,6 +472,15 @@ namespace miniProjekt___Avtosole {
             this.kraj.Size = new System.Drawing.Size(37, 17);
             this.kraj.TabIndex = 38;
             this.kraj.Text = "Kraj:";
+            // 
+            // urediINstruktorCombobox
+            // 
+            this.urediINstruktorCombobox.FormattingEnabled = true;
+            this.urediINstruktorCombobox.Location = new System.Drawing.Point(64, 32);
+            this.urediINstruktorCombobox.Name = "urediINstruktorCombobox";
+            this.urediINstruktorCombobox.Size = new System.Drawing.Size(178, 24);
+            this.urediINstruktorCombobox.TabIndex = 0;
+            this.urediINstruktorCombobox.SelectedIndexChanged += new System.EventHandler(this.urediINstruktorCombobox_SelectedIndexChanged);
             // 
             // priimek
             // 
@@ -424,85 +500,22 @@ namespace miniProjekt___Avtosole {
             this.email.TabIndex = 37;
             this.email.Text = "Email:";
             // 
-            // instruktorTelefonTxt
+            // odjavaBtn
             // 
-            this.instruktorTelefonTxt.Location = new System.Drawing.Point(84, 167);
-            this.instruktorTelefonTxt.Name = "instruktorTelefonTxt";
-            this.instruktorTelefonTxt.Size = new System.Drawing.Size(147, 22);
-            this.instruktorTelefonTxt.TabIndex = 38;
-            // 
-            // instruktorImeTxt
-            // 
-            this.instruktorImeTxt.Location = new System.Drawing.Point(84, 81);
-            this.instruktorImeTxt.Name = "instruktorImeTxt";
-            this.instruktorImeTxt.Size = new System.Drawing.Size(147, 22);
-            this.instruktorImeTxt.TabIndex = 35;
-            // 
-            // instruktorEmailTxt
-            // 
-            this.instruktorEmailTxt.Location = new System.Drawing.Point(84, 137);
-            this.instruktorEmailTxt.Name = "instruktorEmailTxt";
-            this.instruktorEmailTxt.Size = new System.Drawing.Size(147, 22);
-            this.instruktorEmailTxt.TabIndex = 37;
-            // 
-            // instruktorPriimekTxt
-            // 
-            this.instruktorPriimekTxt.Location = new System.Drawing.Point(84, 111);
-            this.instruktorPriimekTxt.Name = "instruktorPriimekTxt";
-            this.instruktorPriimekTxt.Size = new System.Drawing.Size(147, 22);
-            this.instruktorPriimekTxt.TabIndex = 36;
-            // 
-            // instruktorKrajTxt
-            // 
-            this.instruktorKrajTxt.Location = new System.Drawing.Point(84, 198);
-            this.instruktorKrajTxt.Name = "instruktorKrajTxt";
-            this.instruktorKrajTxt.Size = new System.Drawing.Size(147, 22);
-            this.instruktorKrajTxt.TabIndex = 40;
-            // 
-            // dodajInstruktorjaBtn
-            // 
-            this.dodajInstruktorjaBtn.Location = new System.Drawing.Point(12, 305);
-            this.dodajInstruktorjaBtn.Name = "dodajInstruktorjaBtn";
-            this.dodajInstruktorjaBtn.Size = new System.Drawing.Size(110, 40);
-            this.dodajInstruktorjaBtn.TabIndex = 42;
-            this.dodajInstruktorjaBtn.Text = "Dodaj";
-            this.dodajInstruktorjaBtn.UseVisualStyleBackColor = true;
-            this.dodajInstruktorjaBtn.Visible = false;
-            this.dodajInstruktorjaBtn.Click += new System.EventHandler(this.dodajInstruktorjaBtn_Click);
-            // 
-            // urediInstruktorjiBtn
-            // 
-            this.urediInstruktorjiBtn.Location = new System.Drawing.Point(64, 259);
-            this.urediInstruktorjiBtn.Name = "urediInstruktorjiBtn";
-            this.urediInstruktorjiBtn.Size = new System.Drawing.Size(110, 40);
-            this.urediInstruktorjiBtn.TabIndex = 41;
-            this.urediInstruktorjiBtn.Text = "Uredi";
-            this.urediInstruktorjiBtn.UseVisualStyleBackColor = true;
-            this.urediInstruktorjiBtn.Visible = false;
-            this.urediInstruktorjiBtn.Click += new System.EventHandler(this.urediInstruktorjiBtn_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(58, 142);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 17);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Kraj:";
-            // 
-            // urediKrajCombobox
-            // 
-            this.urediKrajCombobox.FormattingEnabled = true;
-            this.urediKrajCombobox.Location = new System.Drawing.Point(98, 139);
-            this.urediKrajCombobox.Name = "urediKrajCombobox";
-            this.urediKrajCombobox.Size = new System.Drawing.Size(152, 24);
-            this.urediKrajCombobox.TabIndex = 35;
+            this.odjavaBtn.Location = new System.Drawing.Point(217, 409);
+            this.odjavaBtn.Name = "odjavaBtn";
+            this.odjavaBtn.Size = new System.Drawing.Size(127, 55);
+            this.odjavaBtn.TabIndex = 39;
+            this.odjavaBtn.Text = "Odjava";
+            this.odjavaBtn.UseVisualStyleBackColor = true;
+            this.odjavaBtn.Click += new System.EventHandler(this.odjavaBtn_Click);
             // 
             // AvtosolaPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(858, 507);
+            this.Controls.Add(this.odjavaBtn);
             this.Controls.Add(this.instruktorjiPanel);
             this.Controls.Add(this.izpitiPanel);
             this.Controls.Add(this.izpitiBtn);
@@ -568,5 +581,6 @@ namespace miniProjekt___Avtosole {
         private System.Windows.Forms.Label email;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox urediKrajCombobox;
+        private System.Windows.Forms.Button odjavaBtn;
     }
 }

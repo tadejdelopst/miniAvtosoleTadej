@@ -39,6 +39,7 @@ namespace miniProjekt___Avtosole {
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.regRegistracijaBtn = new System.Windows.Forms.Button();
+            this.prekkliciBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -166,11 +167,22 @@ namespace miniProjekt___Avtosole {
             this.regRegistracijaBtn.UseVisualStyleBackColor = true;
             this.regRegistracijaBtn.Click += new System.EventHandler(this.regRegistracijaBtn_Click);
             // 
+            // prekkliciBtn
+            // 
+            this.prekkliciBtn.Location = new System.Drawing.Point(357, 206);
+            this.prekkliciBtn.Name = "prekkliciBtn";
+            this.prekkliciBtn.Size = new System.Drawing.Size(120, 50);
+            this.prekkliciBtn.TabIndex = 15;
+            this.prekkliciBtn.Text = "Preklici";
+            this.prekkliciBtn.UseVisualStyleBackColor = true;
+            this.prekkliciBtn.Click += new System.EventHandler(this.prekkliciBtn_Click);
+            // 
             // RegistracijaU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 268);
+            this.Controls.Add(this.prekkliciBtn);
             this.Controls.Add(this.regRegistracijaBtn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -211,5 +223,6 @@ namespace miniProjekt___Avtosole {
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button regRegistracijaBtn;
+        private System.Windows.Forms.Button prekkliciBtn;
     }
 }

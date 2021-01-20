@@ -134,7 +134,6 @@ namespace miniProjekt___Avtosole {
             if (check2 == 1) {
                 AvtosolakNastavi();
                 MessageBox.Show("Prijava uspela!");
-                MessageBox.Show(sola.Email);
                 AvtosolaPage avtosolaPage = new AvtosolaPage(sola);
                 avtosolaPage.Show();
                 this.Hide();

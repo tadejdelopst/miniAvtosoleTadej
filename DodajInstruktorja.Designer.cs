@@ -35,6 +35,7 @@ namespace miniProjekt___Avtosole {
             this.priimek = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
             this.dodajGaBtn = new System.Windows.Forms.Button();
+            this.prekliciBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // instruktorTelefonTxt
@@ -120,7 +121,7 @@ namespace miniProjekt___Avtosole {
             // 
             // dodajGaBtn
             // 
-            this.dodajGaBtn.Location = new System.Drawing.Point(86, 188);
+            this.dodajGaBtn.Location = new System.Drawing.Point(41, 193);
             this.dodajGaBtn.Name = "dodajGaBtn";
             this.dodajGaBtn.Size = new System.Drawing.Size(118, 43);
             this.dodajGaBtn.TabIndex = 50;
@@ -128,11 +129,22 @@ namespace miniProjekt___Avtosole {
             this.dodajGaBtn.UseVisualStyleBackColor = true;
             this.dodajGaBtn.Click += new System.EventHandler(this.dodajGaBtn_Click);
             // 
+            // prekliciBtn
+            // 
+            this.prekliciBtn.Location = new System.Drawing.Point(178, 193);
+            this.prekliciBtn.Name = "prekliciBtn";
+            this.prekliciBtn.Size = new System.Drawing.Size(118, 43);
+            this.prekliciBtn.TabIndex = 51;
+            this.prekliciBtn.Text = "Prekliči";
+            this.prekliciBtn.UseVisualStyleBackColor = true;
+            this.prekliciBtn.Click += new System.EventHandler(this.prekliciBtn_Click);
+            // 
             // DodajInstruktorja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 330);
+            this.Controls.Add(this.prekliciBtn);
             this.Controls.Add(this.dodajGaBtn);
             this.Controls.Add(this.instruktorTelefonTxt);
             this.Controls.Add(this.tel);
@@ -165,5 +177,6 @@ namespace miniProjekt___Avtosole {
         private System.Windows.Forms.Label priimek;
         private System.Windows.Forms.Label email;
         private System.Windows.Forms.Button dodajGaBtn;
+        private System.Windows.Forms.Button prekliciBtn;
     }
 }

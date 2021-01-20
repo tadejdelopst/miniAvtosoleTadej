@@ -35,6 +35,7 @@ namespace miniProjekt___Avtosole {
             this.regKrajiCombobox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.regRegistracijaBtn = new System.Windows.Forms.Button();
+            this.odjavaBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label7
@@ -130,11 +131,22 @@ namespace miniProjekt___Avtosole {
             this.regRegistracijaBtn.UseVisualStyleBackColor = true;
             this.regRegistracijaBtn.Click += new System.EventHandler(this.regRegistracijaBtn_Click);
             // 
+            // odjavaBtn
+            // 
+            this.odjavaBtn.Location = new System.Drawing.Point(493, 117);
+            this.odjavaBtn.Name = "odjavaBtn";
+            this.odjavaBtn.Size = new System.Drawing.Size(112, 50);
+            this.odjavaBtn.TabIndex = 24;
+            this.odjavaBtn.Text = "Prekliči";
+            this.odjavaBtn.UseVisualStyleBackColor = true;
+            this.odjavaBtn.Click += new System.EventHandler(this.odjavaBtn_Click);
+            // 
             // RegistracijaAvto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 223);
+            this.Controls.Add(this.odjavaBtn);
             this.Controls.Add(this.regRegistracijaBtn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.regKrajiCombobox);
@@ -167,5 +179,6 @@ namespace miniProjekt___Avtosole {
         private System.Windows.Forms.ComboBox regKrajiCombobox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button regRegistracijaBtn;
+        private System.Windows.Forms.Button odjavaBtn;
     }
 }

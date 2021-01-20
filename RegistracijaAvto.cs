@@ -62,5 +62,11 @@ namespace miniProjekt___Avtosole {
         private void RegistracijaAvto_Load(object sender, EventArgs e) {
             updateKrajiList();
         }
+
+        private void odjavaBtn_Click(object sender, EventArgs e) {
+            Prijava prijava = new Prijava();
+            prijava.Show();
+            this.Hide();
+        }
     }
 }

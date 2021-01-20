@@ -62,5 +62,11 @@ namespace miniProjekt___Avtosole {
                 con.Close();
             }
         }
+
+        private void prekkliciBtn_Click(object sender, EventArgs e) {
+            Prijava prijava = new Prijava();
+            prijava.Show();
+            this.Hide();
+        }
     }
 }

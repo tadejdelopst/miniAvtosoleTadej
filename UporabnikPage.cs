@@ -189,5 +189,15 @@ namespace miniProjekt___Avtosole {
                 editPassPanel.Enabled = false;
             }
         }
+
+        private void odjavaBtn_Click(object sender, EventArgs e) {
+            Prijava prijava = new Prijava();
+            prijava.Show();
+            this.Hide();
+        }
+
+        private void geslo2Textbox_TextChanged(object sender, EventArgs e) {
+
+        }
     }
 }

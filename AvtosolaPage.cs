@@ -27,7 +27,6 @@ namespace miniProjekt___Avtosole {
             label9.Enabled = false;
             minStarostIzpitTxt.Enabled = false;
             tipIzpitaTxt.Enabled = false;
-            MessageBox.Show(Convert.ToString(sola.ID));
             avtoEmailTxt.Text = sola.Email;
             avtoImeTxt.Text = sola.Ime;
             avtoTelTxt.Text = sola.Telefon;
@@ -390,6 +389,16 @@ namespace miniProjekt___Avtosole {
             DodajInstruktorja page = new DodajInstruktorja(sola.ID);
             page.Show();
             this.Hide();
+        }
+
+        private void odjavaBtn_Click(object sender, EventArgs e) {
+            Prijava prijava = new Prijava();
+            prijava.Show();
+            this.Hide();
+        }
+
+        private void izpitiPanel_Paint(object sender, PaintEventArgs e) {
+
         }
     }
 }
