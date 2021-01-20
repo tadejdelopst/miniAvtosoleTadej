@@ -44,3 +44,4 @@ D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt___Avtosole.Upor
 D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt___Avtosole.RegistracijaAvto.resources
 D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt___Avtosole.AvtosolaPage.resources
 D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt___Avtosole.DodajIzpit.resources
+D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt___Avtosole.DodajInstruktorja.resources

@@ -64,10 +64,10 @@ namespace miniProjekt___Avtosole {
         }
 
         private void dodajGaBtn_Click(object sender, EventArgs e) {
-            /*using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
+            using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
                 con.Open();
 
-                NpgsqlCommand com = new NpgsqlCommand("SELECT dodajIzpit ('" + avtosolaID + "', '" + tipIzpitaTxt.Text + "', '" + Convert.ToInt32(minStarostIzpitTxt.Text) + "')", con);
+                NpgsqlCommand com = new NpgsqlCommand("SELECT dodajInstruktorja ('"+avtosolaID+"', '"+instruktorImeTxt.Text+"', '"+instruktorPriimekTxt.Text+"', '"+instruktorEmailTxt.Text+"', '"+instruktorTelefonTxt.Text+"', '"+Convert.ToInt32(instruktorKrajCombobox.SelectedIndex+1)+"')", con);
                 NpgsqlDataReader reader = com.ExecuteReader();
                 while (reader.Read()) {
                     if (reader.GetString(0) == "USPESNO") {
@@ -75,8 +75,6 @@ namespace miniProjekt___Avtosole {
                         check = 1;
                     } else if (reader.GetString(0) == "NEUSPESNO") {
                         MessageBox.Show("Dodajanje Neuspelo!");
-                        tipIzpitaTxt.Clear();
-                        minStarostIzpitTxt.Clear();
                     }
                 }
                 con.Close();
@@ -86,7 +84,7 @@ namespace miniProjekt___Avtosole {
                     this.Hide();
                     avto.Show();
                 }
-            }*/
+            }
         }
     }
 }
