@@ -84,7 +84,7 @@ namespace miniProjekt___Avtosole {
             urediPanel.Enabled = false;
             urediPodatkeBtn.Enabled = true;
 
-            int idKraja = krajceki[urediKrajiCombobox.SelectedIndex].ID;
+            int idKraja = krajceki[instruktorKrajCombobox.SelectedIndex].ID;
             using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
                 con.Open();
 
@@ -117,7 +117,7 @@ namespace miniProjekt___Avtosole {
 
         private void updateKrajiList() {
             krajceki.Clear();
-            urediKrajiCombobox.Items.Clear();
+            instruktorKrajCombobox.Items.Clear();
 
             using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
                 con.Open();
@@ -125,7 +125,7 @@ namespace miniProjekt___Avtosole {
                 NpgsqlCommand com = new NpgsqlCommand("SELECT * FROM vsiKrajiIzpis()", con);
                 NpgsqlDataReader reader = com.ExecuteReader();
                 while (reader.Read()) {
-                    urediKrajiCombobox.Items.Add(reader.GetString(1) + " " + reader.GetString(2));
+                    instruktorKrajCombobox.Items.Add(reader.GetString(1) + " " + reader.GetString(2));
 
                     Kraj hm = new Kraj(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
 

@@ -25,7 +25,7 @@ namespace miniProjekt___Avtosole {
         /// </summary>
         private void InitializeComponent() {
             this.label6 = new System.Windows.Forms.Label();
-            this.urediKrajiCombobox = new System.Windows.Forms.ComboBox();
+            this.instruktorKrajCombobox = new System.Windows.Forms.ComboBox();
             this.avtoTelTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.avtoImeTxt = new System.Windows.Forms.TextBox();
@@ -42,7 +42,7 @@ namespace miniProjekt___Avtosole {
             this.izpitiBtn = new System.Windows.Forms.Button();
             this.izpitiPanel = new System.Windows.Forms.Panel();
             this.instruktorjiPanel = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.urediINstruktorCombobox = new System.Windows.Forms.ComboBox();
             this.urediIzpitiCombobox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,6 +54,18 @@ namespace miniProjekt___Avtosole {
             this.minStarostIzpitTxt = new System.Windows.Forms.TextBox();
             this.urediIzpitBtn = new System.Windows.Forms.Button();
             this.dodajIzpitBtn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.instruktorTelefonTxt = new System.Windows.Forms.TextBox();
+            this.instruktorImeTxt = new System.Windows.Forms.TextBox();
+            this.instruktorEmailTxt = new System.Windows.Forms.TextBox();
+            this.instruktorPriimekTxt = new System.Windows.Forms.TextBox();
+            this.instruktorKrajTxt = new System.Windows.Forms.TextBox();
+            this.dodajInstruktorjaBtn = new System.Windows.Forms.Button();
+            this.urediInstruktorjiBtn = new System.Windows.Forms.Button();
             this.urediPanel.SuspendLayout();
             this.izpitiPanel.SuspendLayout();
             this.instruktorjiPanel.SuspendLayout();
@@ -62,19 +74,19 @@ namespace miniProjekt___Avtosole {
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(58, 142);
+            this.label6.Location = new System.Drawing.Point(44, 232);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 17);
             this.label6.TabIndex = 30;
             this.label6.Text = "Kraj:";
             // 
-            // urediKrajiCombobox
+            // instruktorKrajCombobox
             // 
-            this.urediKrajiCombobox.FormattingEnabled = true;
-            this.urediKrajiCombobox.Location = new System.Drawing.Point(98, 139);
-            this.urediKrajiCombobox.Name = "urediKrajiCombobox";
-            this.urediKrajiCombobox.Size = new System.Drawing.Size(152, 24);
-            this.urediKrajiCombobox.TabIndex = 29;
+            this.instruktorKrajCombobox.FormattingEnabled = true;
+            this.instruktorKrajCombobox.Location = new System.Drawing.Point(84, 229);
+            this.instruktorKrajCombobox.Name = "instruktorKrajCombobox";
+            this.instruktorKrajCombobox.Size = new System.Drawing.Size(152, 24);
+            this.instruktorKrajCombobox.TabIndex = 29;
             // 
             // avtoTelTxt
             // 
@@ -132,9 +144,7 @@ namespace miniProjekt___Avtosole {
             this.urediPanel.Controls.Add(this.preklicUrediBtn);
             this.urediPanel.Controls.Add(this.urediAvtosolaBtn);
             this.urediPanel.Controls.Add(this.label1);
-            this.urediPanel.Controls.Add(this.label6);
             this.urediPanel.Controls.Add(this.avtoEmailTxt);
-            this.urediPanel.Controls.Add(this.urediKrajiCombobox);
             this.urediPanel.Controls.Add(this.label2);
             this.urediPanel.Controls.Add(this.avtoTelTxt);
             this.urediPanel.Controls.Add(this.avtoImeTxt);
@@ -232,22 +242,36 @@ namespace miniProjekt___Avtosole {
             // instruktorjiPanel
             // 
             this.instruktorjiPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.instruktorjiPanel.Controls.Add(this.dodajInstruktorjaBtn);
+            this.instruktorjiPanel.Controls.Add(this.instruktorKrajTxt);
+            this.instruktorjiPanel.Controls.Add(this.urediInstruktorjiBtn);
+            this.instruktorjiPanel.Controls.Add(this.instruktorTelefonTxt);
+            this.instruktorjiPanel.Controls.Add(this.label10);
+            this.instruktorjiPanel.Controls.Add(this.instruktorImeTxt);
             this.instruktorjiPanel.Controls.Add(this.prekliciInstruktorjiBtn);
+            this.instruktorjiPanel.Controls.Add(this.label6);
+            this.instruktorjiPanel.Controls.Add(this.instruktorEmailTxt);
+            this.instruktorjiPanel.Controls.Add(this.instruktorKrajCombobox);
+            this.instruktorjiPanel.Controls.Add(this.label11);
+            this.instruktorjiPanel.Controls.Add(this.instruktorPriimekTxt);
             this.instruktorjiPanel.Controls.Add(this.label7);
-            this.instruktorjiPanel.Controls.Add(this.comboBox1);
+            this.instruktorjiPanel.Controls.Add(this.label12);
+            this.instruktorjiPanel.Controls.Add(this.urediINstruktorCombobox);
+            this.instruktorjiPanel.Controls.Add(this.label13);
+            this.instruktorjiPanel.Controls.Add(this.label14);
             this.instruktorjiPanel.Enabled = false;
             this.instruktorjiPanel.Location = new System.Drawing.Point(570, 96);
             this.instruktorjiPanel.Name = "instruktorjiPanel";
-            this.instruktorjiPanel.Size = new System.Drawing.Size(257, 271);
+            this.instruktorjiPanel.Size = new System.Drawing.Size(257, 368);
             this.instruktorjiPanel.TabIndex = 38;
             // 
-            // comboBox1
+            // urediINstruktorCombobox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(64, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 24);
-            this.comboBox1.TabIndex = 0;
+            this.urediINstruktorCombobox.FormattingEnabled = true;
+            this.urediINstruktorCombobox.Location = new System.Drawing.Point(64, 32);
+            this.urediINstruktorCombobox.Name = "urediINstruktorCombobox";
+            this.urediINstruktorCombobox.Size = new System.Drawing.Size(178, 24);
+            this.urediINstruktorCombobox.TabIndex = 0;
             // 
             // urediIzpitiCombobox
             // 
@@ -288,7 +312,7 @@ namespace miniProjekt___Avtosole {
             // 
             // prekliciInstruktorjiBtn
             // 
-            this.prekliciInstruktorjiBtn.Location = new System.Drawing.Point(132, 193);
+            this.prekliciInstruktorjiBtn.Location = new System.Drawing.Point(132, 304);
             this.prekliciInstruktorjiBtn.Name = "prekliciInstruktorjiBtn";
             this.prekliciInstruktorjiBtn.Size = new System.Drawing.Size(110, 40);
             this.prekliciInstruktorjiBtn.TabIndex = 33;
@@ -350,11 +374,111 @@ namespace miniProjekt___Avtosole {
             this.dodajIzpitBtn.Visible = false;
             this.dodajIzpitBtn.Click += new System.EventHandler(this.dodajIzpitBtn_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(14, 170);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 17);
+            this.label10.TabIndex = 39;
+            this.label10.Text = "Telefon:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(44, 86);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 17);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "Ime:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(44, 201);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 17);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "Kraj:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(21, 114);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(58, 17);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "Priimek:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(32, 142);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(46, 17);
+            this.label14.TabIndex = 37;
+            this.label14.Text = "Email:";
+            // 
+            // instruktorTelefonTxt
+            // 
+            this.instruktorTelefonTxt.Location = new System.Drawing.Point(84, 167);
+            this.instruktorTelefonTxt.Name = "instruktorTelefonTxt";
+            this.instruktorTelefonTxt.Size = new System.Drawing.Size(147, 22);
+            this.instruktorTelefonTxt.TabIndex = 38;
+            // 
+            // instruktorImeTxt
+            // 
+            this.instruktorImeTxt.Location = new System.Drawing.Point(84, 81);
+            this.instruktorImeTxt.Name = "instruktorImeTxt";
+            this.instruktorImeTxt.Size = new System.Drawing.Size(147, 22);
+            this.instruktorImeTxt.TabIndex = 35;
+            // 
+            // instruktorEmailTxt
+            // 
+            this.instruktorEmailTxt.Location = new System.Drawing.Point(84, 137);
+            this.instruktorEmailTxt.Name = "instruktorEmailTxt";
+            this.instruktorEmailTxt.Size = new System.Drawing.Size(147, 22);
+            this.instruktorEmailTxt.TabIndex = 37;
+            // 
+            // instruktorPriimekTxt
+            // 
+            this.instruktorPriimekTxt.Location = new System.Drawing.Point(84, 111);
+            this.instruktorPriimekTxt.Name = "instruktorPriimekTxt";
+            this.instruktorPriimekTxt.Size = new System.Drawing.Size(147, 22);
+            this.instruktorPriimekTxt.TabIndex = 36;
+            // 
+            // instruktorKrajTxt
+            // 
+            this.instruktorKrajTxt.Location = new System.Drawing.Point(84, 198);
+            this.instruktorKrajTxt.Name = "instruktorKrajTxt";
+            this.instruktorKrajTxt.Size = new System.Drawing.Size(147, 22);
+            this.instruktorKrajTxt.TabIndex = 40;
+            // 
+            // dodajInstruktorjaBtn
+            // 
+            this.dodajInstruktorjaBtn.Location = new System.Drawing.Point(12, 305);
+            this.dodajInstruktorjaBtn.Name = "dodajInstruktorjaBtn";
+            this.dodajInstruktorjaBtn.Size = new System.Drawing.Size(110, 40);
+            this.dodajInstruktorjaBtn.TabIndex = 42;
+            this.dodajInstruktorjaBtn.Text = "Dodaj";
+            this.dodajInstruktorjaBtn.UseVisualStyleBackColor = true;
+            this.dodajInstruktorjaBtn.Visible = false;
+            // 
+            // urediInstruktorjiBtn
+            // 
+            this.urediInstruktorjiBtn.Location = new System.Drawing.Point(64, 259);
+            this.urediInstruktorjiBtn.Name = "urediInstruktorjiBtn";
+            this.urediInstruktorjiBtn.Size = new System.Drawing.Size(110, 40);
+            this.urediInstruktorjiBtn.TabIndex = 41;
+            this.urediInstruktorjiBtn.Text = "Uredi";
+            this.urediInstruktorjiBtn.UseVisualStyleBackColor = true;
+            this.urediInstruktorjiBtn.Visible = false;
+            // 
             // AvtosolaPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 444);
+            this.ClientSize = new System.Drawing.Size(858, 507);
             this.Controls.Add(this.instruktorjiPanel);
             this.Controls.Add(this.izpitiPanel);
             this.Controls.Add(this.izpitiBtn);
@@ -377,7 +501,7 @@ namespace miniProjekt___Avtosole {
         #endregion
 
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox urediKrajiCombobox;
+        private System.Windows.Forms.ComboBox instruktorKrajCombobox;
         private System.Windows.Forms.TextBox avtoTelTxt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox avtoImeTxt;
@@ -397,7 +521,7 @@ namespace miniProjekt___Avtosole {
         private System.Windows.Forms.ComboBox urediIzpitiCombobox;
         private System.Windows.Forms.Panel instruktorjiPanel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox urediINstruktorCombobox;
         private System.Windows.Forms.Button prekliciIzpitiBtn;
         private System.Windows.Forms.Button prekliciInstruktorjiBtn;
         private System.Windows.Forms.Label label8;
@@ -406,5 +530,17 @@ namespace miniProjekt___Avtosole {
         private System.Windows.Forms.TextBox minStarostIzpitTxt;
         private System.Windows.Forms.Button urediIzpitBtn;
         private System.Windows.Forms.Button dodajIzpitBtn;
+        private System.Windows.Forms.Button dodajInstruktorjaBtn;
+        private System.Windows.Forms.TextBox instruktorKrajTxt;
+        private System.Windows.Forms.Button urediInstruktorjiBtn;
+        private System.Windows.Forms.TextBox instruktorTelefonTxt;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox instruktorImeTxt;
+        private System.Windows.Forms.TextBox instruktorEmailTxt;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox instruktorPriimekTxt;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }

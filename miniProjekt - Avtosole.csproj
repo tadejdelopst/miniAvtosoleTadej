@@ -113,6 +113,7 @@
     <Compile Include="DodajIzpit.Designer.cs">
       <DependentUpon>DodajIzpit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instruktor.cs" />
     <Compile Include="Izpit.cs" />
     <Compile Include="Kraj.cs" />
     <Compile Include="Prijava.cs">
