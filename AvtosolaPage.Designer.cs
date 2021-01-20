@@ -468,6 +468,7 @@ namespace miniProjekt___Avtosole {
             this.dodajInstruktorjaBtn.Text = "Dodaj";
             this.dodajInstruktorjaBtn.UseVisualStyleBackColor = true;
             this.dodajInstruktorjaBtn.Visible = false;
+            this.dodajInstruktorjaBtn.Click += new System.EventHandler(this.dodajInstruktorjaBtn_Click);
             // 
             // urediInstruktorjiBtn
             // 

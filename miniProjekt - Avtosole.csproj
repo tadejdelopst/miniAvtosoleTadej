@@ -107,6 +107,12 @@
       <DependentUpon>AvtosolaPage.cs</DependentUpon>
     </Compile>
     <Compile Include="baza.cs" />
+    <Compile Include="DodajInstruktorja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajInstruktorja.Designer.cs">
+      <DependentUpon>DodajInstruktorja.cs</DependentUpon>
+    </Compile>
     <Compile Include="DodajIzpit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="AvtosolaPage.resx">
       <DependentUpon>AvtosolaPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajInstruktorja.resx">
+      <DependentUpon>DodajInstruktorja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DodajIzpit.resx">
       <DependentUpon>DodajIzpit.cs</DependentUpon>

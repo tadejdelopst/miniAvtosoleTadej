@@ -385,5 +385,11 @@ namespace miniProjekt___Avtosole {
                 instruktorKrajCombobox.SelectedIndex = -1;
             }
         }
+
+        private void dodajInstruktorjaBtn_Click(object sender, EventArgs e) {
+            DodajInstruktorja page = new DodajInstruktorja(sola.ID);
+            page.Show();
+            this.Hide();
+        }
     }
 }
