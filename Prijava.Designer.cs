@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.prijavaAvtoEmailTextbox = new System.Windows.Forms.TextBox();
+            this.regAvtoIzpitBtn = new System.Windows.Forms.Button();
             this.prijavaPanel.SuspendLayout();
             this.prijavaAvtoPanel.SuspendLayout();
             this.SuspendLayout();
@@ -153,6 +154,7 @@
             // 
             // prijavaAvtoPanel
             // 
+            this.prijavaAvtoPanel.Controls.Add(this.regAvtoIzpitBtn);
             this.prijavaAvtoPanel.Controls.Add(this.prijavaAvtoBtn);
             this.prijavaAvtoPanel.Controls.Add(this.registracijaAvtoBtn);
             this.prijavaAvtoPanel.Controls.Add(this.label4);
@@ -209,6 +211,16 @@
             this.prijavaAvtoEmailTextbox.Size = new System.Drawing.Size(147, 22);
             this.prijavaAvtoEmailTextbox.TabIndex = 3;
             // 
+            // regAvtoIzpitBtn
+            // 
+            this.regAvtoIzpitBtn.Location = new System.Drawing.Point(60, 213);
+            this.regAvtoIzpitBtn.Name = "regAvtoIzpitBtn";
+            this.regAvtoIzpitBtn.Size = new System.Drawing.Size(196, 31);
+            this.regAvtoIzpitBtn.TabIndex = 7;
+            this.regAvtoIzpitBtn.Text = "Registracija z Izpitom";
+            this.regAvtoIzpitBtn.UseVisualStyleBackColor = true;
+            this.regAvtoIzpitBtn.Click += new System.EventHandler(this.regAvtoIzpitBtn_Click);
+            // 
             // Prijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -249,6 +261,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox prijavaAvtoEmailTextbox;
+        private System.Windows.Forms.Button regAvtoIzpitBtn;
     }
 }
 

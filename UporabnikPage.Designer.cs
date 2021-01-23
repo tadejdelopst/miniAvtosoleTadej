@@ -50,6 +50,7 @@ namespace miniProjekt___Avtosole {
             this.geslo1Textbox = new System.Windows.Forms.TextBox();
             this.userPgEditPassBtn = new System.Windows.Forms.Button();
             this.odjavaBtn = new System.Windows.Forms.Button();
+            this.deleteUserBtn = new System.Windows.Forms.Button();
             this.urediPodatkePanel.SuspendLayout();
             this.editPassPanel.SuspendLayout();
             this.SuspendLayout();
@@ -302,11 +303,22 @@ namespace miniProjekt___Avtosole {
             this.odjavaBtn.UseVisualStyleBackColor = true;
             this.odjavaBtn.Click += new System.EventHandler(this.odjavaBtn_Click);
             // 
+            // deleteUserBtn
+            // 
+            this.deleteUserBtn.Location = new System.Drawing.Point(487, 369);
+            this.deleteUserBtn.Name = "deleteUserBtn";
+            this.deleteUserBtn.Size = new System.Drawing.Size(135, 46);
+            this.deleteUserBtn.TabIndex = 5;
+            this.deleteUserBtn.Text = "Izbriši uporabnika!";
+            this.deleteUserBtn.UseVisualStyleBackColor = true;
+            this.deleteUserBtn.Click += new System.EventHandler(this.deleteUserBtn_Click);
+            // 
             // UporabnikPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.deleteUserBtn);
             this.Controls.Add(this.odjavaBtn);
             this.Controls.Add(this.userPgEditPassBtn);
             this.Controls.Add(this.editPassPanel);
@@ -351,5 +363,6 @@ namespace miniProjekt___Avtosole {
         private System.Windows.Forms.Button userPgEditPassBtn;
         private System.Windows.Forms.Button cancelEditPassBtn;
         private System.Windows.Forms.Button odjavaBtn;
+        private System.Windows.Forms.Button deleteUserBtn;
     }
 }

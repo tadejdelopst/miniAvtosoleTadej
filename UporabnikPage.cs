@@ -199,5 +199,24 @@ namespace miniProjekt___Avtosole {
         private void geslo2Textbox_TextChanged(object sender, EventArgs e) {
 
         }
+
+        private void deleteUserBtn_Click(object sender, EventArgs e) {
+            int idU = neki.ID;
+            using (NpgsqlConnection conS = new NpgsqlConnection(connect)) {
+                conS.Open();
+
+                NpgsqlCommand comS = new NpgsqlCommand("SELECT izbrisiUporabnika('"+idU+"')", conS);
+                NpgsqlDataReader readerS = comS.ExecuteReader();
+                while (readerS.Read()) {
+                    if(readerS.GetString(0) == "USPESNO") {
+                        MessageBox.Show("Uporabnik je bil izbrisan");
+                        Prijava prijava = new Prijava();
+                        prijava.Show();
+                        this.Hide();
+                    }
+                }
+                conS.Close();
+            }
+        }
     }
 }

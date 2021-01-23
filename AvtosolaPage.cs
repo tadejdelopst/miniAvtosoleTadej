@@ -45,7 +45,7 @@ namespace miniProjekt___Avtosole {
             urediPanel.Enabled = true;
             izpitiPanel.Enabled = false;
             urediPodatkeBtn.Enabled = false;
-            }
+        }
 
         public void AvtosolakNastavi() {
             using (NpgsqlConnection conS = new NpgsqlConnection(connect)) {
@@ -161,7 +161,7 @@ namespace miniProjekt___Avtosole {
             using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
                 con.Open();
 
-                NpgsqlCommand com = new NpgsqlCommand("SELECT * FROM vseAvtosoleIzpitiIzpis ('" + sola.ID+"')", con);
+                NpgsqlCommand com = new NpgsqlCommand("SELECT * FROM vseAvtosoleIzpitiIzpis ('" + sola.ID + "')", con);
                 NpgsqlDataReader reader = com.ExecuteReader();
                 while (reader.Read()) {
                     urediIzpitiCombobox.Items.Add(reader.GetString(1) + " " + reader.GetInt32(2));
@@ -200,6 +200,7 @@ namespace miniProjekt___Avtosole {
             urediIzpitiCombobox.Text = "";
             izpitiPanel.Enabled = true;
             dodajIzpitBtn.Enabled = true;
+            deleteIzpitBtn.Enabled = false;
             dodajIzpitBtn.Visible = true;
             urediPanel.Enabled = false;
             instruktorjiPanel.Enabled = false;
@@ -254,6 +255,7 @@ namespace miniProjekt___Avtosole {
         private void urediIzpitiCombobox_SelectedIndexChanged(object sender, EventArgs e) {
             label8.Enabled = true;
             label9.Enabled = true;
+            deleteIzpitBtn.Enabled = true;
             minStarostIzpitTxt.Enabled = true;
             tipIzpitaTxt.Enabled = true;
             int idIzpita = urediIzpitiCombobox.SelectedIndex;
@@ -271,7 +273,7 @@ namespace miniProjekt___Avtosole {
             using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
                 con.Open();
 
-                NpgsqlCommand com = new NpgsqlCommand("SELECT urediIzpit ('"+idI+"', '"+tipIzpitaTxt.Text+"', '"+Convert.ToInt32(minStarostIzpitTxt.Text)+"')", con);
+                NpgsqlCommand com = new NpgsqlCommand("SELECT urediIzpit ('" + idI + "', '" + tipIzpitaTxt.Text + "', '" + Convert.ToInt32(minStarostIzpitTxt.Text) + "')", con);
                 NpgsqlDataReader reader = com.ExecuteReader();
                 while (reader.Read()) {
                     if (reader.GetString(0) == "USPESNO") {
@@ -321,7 +323,7 @@ namespace miniProjekt___Avtosole {
             instruktorKrajTxt.Enabled = true;
             instruktorKrajCombobox.Enabled = true;
 
-            instruktorImeTxt.Text =instruktorji[IdInstruktorja].Ime;
+            instruktorImeTxt.Text = instruktorji[IdInstruktorja].Ime;
             instruktorPriimekTxt.Text = instruktorji[IdInstruktorja].Priimek;
             instruktorEmailTxt.Text = instruktorji[IdInstruktorja].Email;
             instruktorTelefonTxt.Text = instruktorji[IdInstruktorja].Telefon;
@@ -342,7 +344,7 @@ namespace miniProjekt___Avtosole {
             using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
                 con.Open();
 
-                NpgsqlCommand com = new NpgsqlCommand("SELECT urediInstruktorja('"+idnstruktorja+"', '"+instruktorImeTxt.Text+ "','" + instruktorPriimekTxt.Text + "','" + instruktorEmailTxt.Text + "','" + instruktorTelefonTxt.Text + "','" + Convert.ToInt32(instruktorKrajCombobox.SelectedIndex +1) + "') ", con);
+                NpgsqlCommand com = new NpgsqlCommand("SELECT urediInstruktorja('" + idnstruktorja + "', '" + instruktorImeTxt.Text + "','" + instruktorPriimekTxt.Text + "','" + instruktorEmailTxt.Text + "','" + instruktorTelefonTxt.Text + "','" + Convert.ToInt32(instruktorKrajCombobox.SelectedIndex + 1) + "') ", con);
                 NpgsqlDataReader reader = com.ExecuteReader();
                 while (reader.Read()) {
                     if (reader.GetString(0) == "USPESNO") {
@@ -399,6 +401,99 @@ namespace miniProjekt___Avtosole {
 
         private void izpitiPanel_Paint(object sender, PaintEventArgs e) {
 
+        }
+
+        private void deleteIzpitBtn_Click(object sender, EventArgs e) {
+            int idI = izpiti[urediIzpitiCombobox.SelectedIndex].ID;
+            using (NpgsqlConnection conS = new NpgsqlConnection(connect)) {
+                conS.Open();
+
+                NpgsqlCommand comS = new NpgsqlCommand("SELECT izbrisiIzbit('" + idI + "')", conS);
+                NpgsqlDataReader readerS = comS.ExecuteReader();
+                while (readerS.Read()) {
+                    if (readerS.GetString(0) == "USPESNO") {
+                        MessageBox.Show("Izpit je bil izbrisan");
+                        updateIzpitiList();
+
+                        izpitiPanel.Enabled = false;
+                        izpitiBtn.Enabled = true;
+                        urediIzpitiCombobox.SelectedIndex = -1;
+                        urediIzpitiCombobox.Text = "";
+                        label8.Enabled = false;
+                        label9.Enabled = false;
+                        minStarostIzpitTxt.Enabled = false;
+                        tipIzpitaTxt.Enabled = false;
+                        minStarostIzpitTxt.Clear();
+                        tipIzpitaTxt.Clear();
+                    }
+                }
+                conS.Close();
+            }
+        }
+
+        private void deleteInstruktorBtn_Click(object sender, EventArgs e) {
+            int idI = instruktorji[urediINstruktorCombobox.SelectedIndex].ID;
+            using (NpgsqlConnection conS = new NpgsqlConnection(connect)) {
+                conS.Open();
+
+                NpgsqlCommand comS = new NpgsqlCommand("SELECT izbrisiInstruktor('" + idI + "')", conS);
+                NpgsqlDataReader readerS = comS.ExecuteReader();
+                while (readerS.Read()) {
+                    if (readerS.GetString(0) == "USPESNO") {
+                        MessageBox.Show("Inštruktor je bil izbrisan");
+                        instruktorjiPanel.Enabled = false;
+                        instruktorjiBtn.Enabled = true;
+
+                        updateInstruktorjiList();
+                        urediINstruktorCombobox.SelectedIndex = -1;
+                        urediINstruktorCombobox.Text = "";
+                        urediInstruktorjiBtn.Visible = false;
+                        dodajInstruktorjaBtn.Visible = true;
+                        urediPanel.Enabled = false;
+                        izpitiPanel.Enabled = false;
+                        ime.Enabled = false;
+                        priimek.Enabled = false;
+                        email.Enabled = false;
+                        tel.Enabled = false;
+                        kraj.Enabled = false;
+                        kraj1.Enabled = false;
+                        instruktorImeTxt.Enabled = false;
+                        instruktorPriimekTxt.Enabled = false;
+                        instruktorEmailTxt.Enabled = false;
+                        instruktorTelefonTxt.Enabled = false;
+                        instruktorKrajTxt.Enabled = false;
+                        instruktorKrajCombobox.Enabled = false;
+
+                        instruktorImeTxt.Clear();
+                        instruktorPriimekTxt.Clear();
+                        instruktorEmailTxt.Clear();
+                        instruktorTelefonTxt.Clear();
+                        instruktorKrajTxt.Clear();
+                        instruktorKrajCombobox.Text = "";
+                        instruktorKrajCombobox.SelectedIndex = -1;
+                    }
+                }
+                conS.Close();
+            }
+        }
+
+        private void deleteAvtosolaBtn_Click(object sender, EventArgs e) {
+            int idA = sola.ID;
+            using (NpgsqlConnection conS = new NpgsqlConnection(connect)) {
+                conS.Open();
+
+                NpgsqlCommand comS = new NpgsqlCommand("SELECT izbrisiAvtosolo('" + idA + "')", conS);
+                NpgsqlDataReader readerS = comS.ExecuteReader();
+                while (readerS.Read()) {
+                    if (readerS.GetString(0) == "USPESNO") {
+                        MessageBox.Show("Avtosola je bila izbrisana");
+                        Prijava prijava = new Prijava();
+                        prijava.Show();
+                        this.Hide();
+                    }
+                }
+                conS.Close();
+            }
         }
     }
 }

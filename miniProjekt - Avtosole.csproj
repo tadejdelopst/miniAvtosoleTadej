@@ -130,6 +130,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegAvtoIzpit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegAvtoIzpit.Designer.cs">
+      <DependentUpon>RegAvtoIzpit.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistracijaAvto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegAvtoIzpit.resx">
+      <DependentUpon>RegAvtoIzpit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistracijaAvto.resx">
       <DependentUpon>RegistracijaAvto.cs</DependentUpon>
     </EmbeddedResource>

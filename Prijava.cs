@@ -160,5 +160,11 @@ namespace miniProjekt___Avtosole {
         private void Prijava_Load(object sender, EventArgs e) {
 
         }
+
+        private void regAvtoIzpitBtn_Click(object sender, EventArgs e) {
+            RegAvtoIzpit regAvtoIzpit = new RegAvtoIzpit();
+            regAvtoIzpit.Show();
+            this.Hide();
+        }
     }
 }
