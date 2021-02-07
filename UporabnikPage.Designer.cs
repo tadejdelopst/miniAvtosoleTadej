@@ -229,6 +229,7 @@ namespace miniProjekt___Avtosole {
             this.editPassPanel.Name = "editPassPanel";
             this.editPassPanel.Size = new System.Drawing.Size(243, 182);
             this.editPassPanel.TabIndex = 2;
+            this.editPassPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.editPassPanel_Paint);
             // 
             // cancelEditPassBtn
             // 

@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
+using System.Configuration;
+using System.Security.Cryptography;
 
 namespace miniProjekt___Avtosole {
     public partial class UporabnikPage : Form {
         Uporabnik neki = new Uporabnik();
         List<Kraj> krajceki = new List<Kraj>();
+
+        string hash = "f0xle@rn";
 
         public UporabnikPage(Uporabnik uporabnik) {
             InitializeComponent();
@@ -50,7 +54,7 @@ namespace miniProjekt___Avtosole {
             userPgNaslovTextbox.Text = neki.Naslov;
             userPgStarostTextbox.Text = Convert.ToString(neki.Starost);
             userPgTelefonTextbox.Text = neki.Telefon;
-            geslo1Textbox.Text = neki.Pass;
+            geslo1Textbox.Text = dekriptiraj(neki.Pass);
 
             updateKrajiList();
 
@@ -58,6 +62,19 @@ namespace miniProjekt___Avtosole {
             {
                 if (krajceki[i].ID == neki.Kraj_ID) {
                     userPgKrajTextbox.Text = krajceki[i].Ime + ", " + krajceki[i].Posta;
+                }
+            }
+        }
+
+        private string dekriptiraj(string geslo) {
+            byte[] data = Convert.FromBase64String(geslo);
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider()) {
+                byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                using (TripleDESCryptoServiceProvider tripleDes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 }) {
+                    ICryptoTransform transform = tripleDes.CreateDecryptor();
+                    byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+                    string vrni = UTF8Encoding.UTF8.GetString(results);
+                    return vrni;
                 }
             }
         }
@@ -138,7 +155,7 @@ namespace miniProjekt___Avtosole {
         private void userPgEditPassBtn_Click(object sender, EventArgs e) {
             editPassPanel.Enabled = true;
             userPgEditPassBtn.Enabled = false;
-            geslo1Textbox.Text = neki.Pass;
+            geslo1Textbox.Text = dekriptiraj(neki.Pass);
         }
 
         private void cancelEditPassBtn_Click(object sender, EventArgs e) {
@@ -148,6 +165,19 @@ namespace miniProjekt___Avtosole {
             userPgEditPassBtn.Enabled = true;
         }
 
+        private string kriptiraj(string geslo) {
+            byte[] data = UTF8Encoding.UTF8.GetBytes(geslo);
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider()) {
+                byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                using (TripleDESCryptoServiceProvider tripleDes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 }) {
+                    ICryptoTransform transform = tripleDes.CreateEncryptor();
+                    byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+                    string vrni = Convert.ToBase64String(results, 0, results.Length);
+                    return vrni;
+                }
+            }
+        }
+
         private void ZamenjajGesloBtn_Click(object sender, EventArgs e) {
             if (geslo1Textbox.Text == geslo2Textbox.Text) {
                 int idKraja = neki.Kraj_ID;
@@ -155,7 +185,7 @@ namespace miniProjekt___Avtosole {
                 using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
                     con.Open();
 
-                    NpgsqlCommand com = new NpgsqlCommand("SELECT urediUporabnika('" + neki.ID + "', '" + userPgEmailTextbox.Text + "', '" + geslo2Textbox.Text + "', '" + userPgNaslovTextbox.Text + "', '" + userPgStarostTextbox.Text + "', '" + userPgTelefonTextbox.Text + "', '" + idKraja + "')", con);
+                    NpgsqlCommand com = new NpgsqlCommand("SELECT urediUporabnika('" + neki.ID + "', '" + userPgEmailTextbox.Text + "', '" + kriptiraj(geslo2Textbox.Text) + "', '" + userPgNaslovTextbox.Text + "', '" + userPgStarostTextbox.Text + "', '" + userPgTelefonTextbox.Text + "', '" + idKraja + "')", con);
                     NpgsqlDataReader reader = com.ExecuteReader();
                     while (reader.Read()) {
                         if (reader.GetString(0) == "USPESNO") {
@@ -217,6 +247,10 @@ namespace miniProjekt___Avtosole {
                 }
                 conS.Close();
             }
+        }
+
+        private void editPassPanel_Paint(object sender, PaintEventArgs e) {
+
         }
     }
 }

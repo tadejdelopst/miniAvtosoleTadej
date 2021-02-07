@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
 using System.Configuration;
+using System.Security.Cryptography;
 
 namespace miniProjekt___Avtosole {
     public partial class Prijava : Form {
+
+        string hash = "f0xle@rn";
         string connect = baza.connect();
         Uporabnik user = new Uporabnik();
         Avtosola sola = new Avtosola();
@@ -20,6 +23,32 @@ namespace miniProjekt___Avtosole {
 
         public Prijava() {
             InitializeComponent();
+        }
+
+        private string dekriptiraj(string geslo) {
+            byte[] data = Convert.FromBase64String(geslo);
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider()) {
+                byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                using (TripleDESCryptoServiceProvider tripleDes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 }) {
+                    ICryptoTransform transform = tripleDes.CreateDecryptor();
+                    byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+                    string vrni = UTF8Encoding.UTF8.GetString(results);
+                    return vrni;
+                }
+            }
+        }
+
+        private string kriptiraj(string geslo) {
+            byte[] data = UTF8Encoding.UTF8.GetBytes(geslo);
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider()) {
+                byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                using (TripleDESCryptoServiceProvider tripleDes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 }) {
+                    ICryptoTransform transform = tripleDes.CreateEncryptor();
+                    byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+                    string vrni = Convert.ToBase64String(results, 0, results.Length);
+                    return vrni;
+                }
+            }
         }
 
         private void gumb_Click(object sender, EventArgs e) {
@@ -56,7 +85,7 @@ namespace miniProjekt___Avtosole {
                 using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
                 con.Open();
 
-                NpgsqlCommand com = new NpgsqlCommand("SELECT prijavauporabnika('"+  prijavaEmailTxtBox.Text +"', '"+  prijavaPassTxtBox.Text +"')", con);
+                NpgsqlCommand com = new NpgsqlCommand("SELECT prijavauporabnika('"+  prijavaEmailTxtBox.Text +"', '"+  kriptiraj(prijavaPassTxtBox.Text) +"')", con);
                 NpgsqlDataReader reader = com.ExecuteReader();
                 while (reader.Read()) {
                     if (reader.GetString(0) == "USPESNO") {

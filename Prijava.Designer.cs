@@ -35,12 +35,12 @@
             this.avtosolaBtn = new System.Windows.Forms.Button();
             this.prekliciBtn = new System.Windows.Forms.Button();
             this.prijavaAvtoPanel = new System.Windows.Forms.Panel();
+            this.regAvtoIzpitBtn = new System.Windows.Forms.Button();
             this.prijavaAvtoBtn = new System.Windows.Forms.Button();
             this.registracijaAvtoBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.prijavaAvtoEmailTextbox = new System.Windows.Forms.TextBox();
-            this.regAvtoIzpitBtn = new System.Windows.Forms.Button();
             this.prijavaPanel.SuspendLayout();
             this.prijavaAvtoPanel.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,7 @@
             // 
             this.prijavaPassTxtBox.Location = new System.Drawing.Point(109, 57);
             this.prijavaPassTxtBox.Name = "prijavaPassTxtBox";
+            this.prijavaPassTxtBox.PasswordChar = 'M';
             this.prijavaPassTxtBox.Size = new System.Drawing.Size(147, 22);
             this.prijavaPassTxtBox.TabIndex = 4;
             // 
@@ -166,6 +167,16 @@
             this.prijavaAvtoPanel.TabIndex = 8;
             this.prijavaAvtoPanel.Visible = false;
             // 
+            // regAvtoIzpitBtn
+            // 
+            this.regAvtoIzpitBtn.Location = new System.Drawing.Point(60, 213);
+            this.regAvtoIzpitBtn.Name = "regAvtoIzpitBtn";
+            this.regAvtoIzpitBtn.Size = new System.Drawing.Size(196, 31);
+            this.regAvtoIzpitBtn.TabIndex = 7;
+            this.regAvtoIzpitBtn.Text = "Registracija z Izpitom";
+            this.regAvtoIzpitBtn.UseVisualStyleBackColor = true;
+            this.regAvtoIzpitBtn.Click += new System.EventHandler(this.regAvtoIzpitBtn_Click);
+            // 
             // prijavaAvtoBtn
             // 
             this.prijavaAvtoBtn.Location = new System.Drawing.Point(78, 95);
@@ -210,16 +221,6 @@
             this.prijavaAvtoEmailTextbox.Name = "prijavaAvtoEmailTextbox";
             this.prijavaAvtoEmailTextbox.Size = new System.Drawing.Size(147, 22);
             this.prijavaAvtoEmailTextbox.TabIndex = 3;
-            // 
-            // regAvtoIzpitBtn
-            // 
-            this.regAvtoIzpitBtn.Location = new System.Drawing.Point(60, 213);
-            this.regAvtoIzpitBtn.Name = "regAvtoIzpitBtn";
-            this.regAvtoIzpitBtn.Size = new System.Drawing.Size(196, 31);
-            this.regAvtoIzpitBtn.TabIndex = 7;
-            this.regAvtoIzpitBtn.Text = "Registracija z Izpitom";
-            this.regAvtoIzpitBtn.UseVisualStyleBackColor = true;
-            this.regAvtoIzpitBtn.Click += new System.EventHandler(this.regAvtoIzpitBtn_Click);
             // 
             // Prijava
             // 

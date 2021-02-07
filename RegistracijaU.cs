@@ -8,9 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
+using System.Configuration;
+using System.Security.Cryptography;
 
 namespace miniProjekt___Avtosole {
     public partial class RegistracijaU : Form {
+
+        string hash = "f0xle@rn";
+
         public RegistracijaU() {
             InitializeComponent();
         }
@@ -23,7 +28,7 @@ namespace miniProjekt___Avtosole {
             using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
                 con.Open();
 
-                NpgsqlCommand com = new NpgsqlCommand("SELECT registracijauporabnika('"+ regEmailTextbox.Text + "','" + regPassTextbox.Text + "','"+ regNaslovTextbox.Text + "', '" + Convert.ToInt32(regStarTextbox.Text) + "','" + regTelTextbox.Text + "', '" + idKraja + "')", con);
+                NpgsqlCommand com = new NpgsqlCommand("SELECT registracijauporabnika('"+ regEmailTextbox.Text + "','" + kriptiraj(regPassTextbox.Text) + "','"+ regNaslovTextbox.Text + "', '" + Convert.ToInt32(regStarTextbox.Text) + "','" + regTelTextbox.Text + "', '" + idKraja + "')", con);
                 NpgsqlDataReader reader = com.ExecuteReader();
                 while (reader.Read()) {
                     if (reader.GetString(0) == "USPESNO") {
@@ -60,6 +65,19 @@ namespace miniProjekt___Avtosole {
                     kraji.Add(hm);
                 }
                 con.Close();
+            }
+        }
+
+        private string kriptiraj(string geslo) {
+            byte[] data = UTF8Encoding.UTF8.GetBytes(geslo);
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider()) {
+                byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                using (TripleDESCryptoServiceProvider tripleDes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 }) {
+                    ICryptoTransform transform = tripleDes.CreateEncryptor();
+                    byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+                    string vrni = Convert.ToBase64String(results, 0, results.Length);
+                    return vrni;
+                }
             }
         }
 
