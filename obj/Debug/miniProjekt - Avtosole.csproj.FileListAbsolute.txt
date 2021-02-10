@@ -46,3 +46,4 @@ D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt___Avtosole.Avto
 D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt___Avtosole.DodajIzpit.resources
 D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt___Avtosole.DodajInstruktorja.resources
 D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt___Avtosole.RegAvtoIzpit.resources
+D:\Namizje\projects\miniProjekt - Avtosole\obj\Debug\miniProjekt - Avtosole.csproj.ResolveComReference.cache

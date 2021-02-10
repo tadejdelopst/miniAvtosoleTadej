@@ -43,6 +43,7 @@ namespace miniProjekt___Avtosole {
             this.instruktorjiBtn = new System.Windows.Forms.Button();
             this.izpitiBtn = new System.Windows.Forms.Button();
             this.izpitiPanel = new System.Windows.Forms.Panel();
+            this.deleteIzpitBtn = new System.Windows.Forms.Button();
             this.dodajIzpitBtn = new System.Windows.Forms.Button();
             this.urediIzpitBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@ namespace miniProjekt___Avtosole {
             this.minStarostIzpitTxt = new System.Windows.Forms.TextBox();
             this.urediIzpitiCombobox = new System.Windows.Forms.ComboBox();
             this.instruktorjiPanel = new System.Windows.Forms.Panel();
+            this.deleteInstruktorBtn = new System.Windows.Forms.Button();
             this.dodajInstruktorjaBtn = new System.Windows.Forms.Button();
             this.instruktorKrajTxt = new System.Windows.Forms.TextBox();
             this.urediInstruktorjiBtn = new System.Windows.Forms.Button();
@@ -69,9 +71,10 @@ namespace miniProjekt___Avtosole {
             this.priimek = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
             this.odjavaBtn = new System.Windows.Forms.Button();
-            this.deleteIzpitBtn = new System.Windows.Forms.Button();
-            this.deleteInstruktorBtn = new System.Windows.Forms.Button();
             this.deleteAvtosolaBtn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.excIzvozTextbox = new System.Windows.Forms.TextBox();
+            this.excelBtn = new System.Windows.Forms.Button();
             this.urediPanel.SuspendLayout();
             this.izpitiPanel.SuspendLayout();
             this.instruktorjiPanel.SuspendLayout();
@@ -266,6 +269,16 @@ namespace miniProjekt___Avtosole {
             this.izpitiPanel.TabIndex = 37;
             this.izpitiPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.izpitiPanel_Paint);
             // 
+            // deleteIzpitBtn
+            // 
+            this.deleteIzpitBtn.Location = new System.Drawing.Point(140, 146);
+            this.deleteIzpitBtn.Name = "deleteIzpitBtn";
+            this.deleteIzpitBtn.Size = new System.Drawing.Size(110, 42);
+            this.deleteIzpitBtn.TabIndex = 41;
+            this.deleteIzpitBtn.Text = "Izbriši";
+            this.deleteIzpitBtn.UseVisualStyleBackColor = true;
+            this.deleteIzpitBtn.Click += new System.EventHandler(this.deleteIzpitBtn_Click);
+            // 
             // dodajIzpitBtn
             // 
             this.dodajIzpitBtn.Location = new System.Drawing.Point(24, 193);
@@ -313,6 +326,7 @@ namespace miniProjekt___Avtosole {
             this.tipIzpitaTxt.Name = "tipIzpitaTxt";
             this.tipIzpitaTxt.Size = new System.Drawing.Size(100, 22);
             this.tipIzpitaTxt.TabIndex = 36;
+            this.tipIzpitaTxt.TextChanged += new System.EventHandler(this.tipIzpitaTxt_TextChanged);
             // 
             // label9
             // 
@@ -374,6 +388,16 @@ namespace miniProjekt___Avtosole {
             this.instruktorjiPanel.Name = "instruktorjiPanel";
             this.instruktorjiPanel.Size = new System.Drawing.Size(257, 368);
             this.instruktorjiPanel.TabIndex = 38;
+            // 
+            // deleteInstruktorBtn
+            // 
+            this.deleteInstruktorBtn.Location = new System.Drawing.Point(132, 257);
+            this.deleteInstruktorBtn.Name = "deleteInstruktorBtn";
+            this.deleteInstruktorBtn.Size = new System.Drawing.Size(110, 42);
+            this.deleteInstruktorBtn.TabIndex = 42;
+            this.deleteInstruktorBtn.Text = "Izbriši";
+            this.deleteInstruktorBtn.UseVisualStyleBackColor = true;
+            this.deleteInstruktorBtn.Click += new System.EventHandler(this.deleteInstruktorBtn_Click);
             // 
             // dodajInstruktorjaBtn
             // 
@@ -515,26 +539,6 @@ namespace miniProjekt___Avtosole {
             this.odjavaBtn.UseVisualStyleBackColor = true;
             this.odjavaBtn.Click += new System.EventHandler(this.odjavaBtn_Click);
             // 
-            // deleteIzpitBtn
-            // 
-            this.deleteIzpitBtn.Location = new System.Drawing.Point(140, 146);
-            this.deleteIzpitBtn.Name = "deleteIzpitBtn";
-            this.deleteIzpitBtn.Size = new System.Drawing.Size(110, 42);
-            this.deleteIzpitBtn.TabIndex = 41;
-            this.deleteIzpitBtn.Text = "Izbriši";
-            this.deleteIzpitBtn.UseVisualStyleBackColor = true;
-            this.deleteIzpitBtn.Click += new System.EventHandler(this.deleteIzpitBtn_Click);
-            // 
-            // deleteInstruktorBtn
-            // 
-            this.deleteInstruktorBtn.Location = new System.Drawing.Point(132, 257);
-            this.deleteInstruktorBtn.Name = "deleteInstruktorBtn";
-            this.deleteInstruktorBtn.Size = new System.Drawing.Size(110, 42);
-            this.deleteInstruktorBtn.TabIndex = 42;
-            this.deleteInstruktorBtn.Text = "Izbriši";
-            this.deleteInstruktorBtn.UseVisualStyleBackColor = true;
-            this.deleteInstruktorBtn.Click += new System.EventHandler(this.deleteInstruktorBtn_Click);
-            // 
             // deleteAvtosolaBtn
             // 
             this.deleteAvtosolaBtn.Location = new System.Drawing.Point(350, 409);
@@ -545,11 +549,43 @@ namespace miniProjekt___Avtosole {
             this.deleteAvtosolaBtn.UseVisualStyleBackColor = true;
             this.deleteAvtosolaBtn.Click += new System.EventHandler(this.deleteAvtosolaBtn_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(67, 487);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(258, 29);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Vnesite ime datoteke:";
+            // 
+            // excIzvozTextbox
+            // 
+            this.excIzvozTextbox.Location = new System.Drawing.Point(72, 519);
+            this.excIzvozTextbox.Name = "excIzvozTextbox";
+            this.excIzvozTextbox.Size = new System.Drawing.Size(241, 22);
+            this.excIzvozTextbox.TabIndex = 37;
+            this.excIzvozTextbox.TextChanged += new System.EventHandler(this.excIzvozTextbox_TextChanged);
+            // 
+            // excelBtn
+            // 
+            this.excelBtn.Enabled = false;
+            this.excelBtn.Location = new System.Drawing.Point(350, 493);
+            this.excelBtn.Name = "excelBtn";
+            this.excelBtn.Size = new System.Drawing.Size(114, 48);
+            this.excelBtn.TabIndex = 44;
+            this.excelBtn.Text = "Izvozi Inštruktorje";
+            this.excelBtn.UseVisualStyleBackColor = true;
+            this.excelBtn.Click += new System.EventHandler(this.excelBtn_Click);
+            // 
             // AvtosolaPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 507);
+            this.ClientSize = new System.Drawing.Size(909, 601);
+            this.Controls.Add(this.excelBtn);
+            this.Controls.Add(this.excIzvozTextbox);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.deleteAvtosolaBtn);
             this.Controls.Add(this.odjavaBtn);
             this.Controls.Add(this.instruktorjiPanel);
@@ -568,6 +604,7 @@ namespace miniProjekt___Avtosole {
             this.instruktorjiPanel.ResumeLayout(false);
             this.instruktorjiPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -621,5 +658,8 @@ namespace miniProjekt___Avtosole {
         private System.Windows.Forms.Button deleteIzpitBtn;
         private System.Windows.Forms.Button deleteInstruktorBtn;
         private System.Windows.Forms.Button deleteAvtosolaBtn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox excIzvozTextbox;
+        private System.Windows.Forms.Button excelBtn;
     }
 }

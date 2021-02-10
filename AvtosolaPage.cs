@@ -8,9 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
+using Microsoft.Office.Core;
+using Microsoft.Office.Interop;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace miniProjekt___Avtosole {
+
     public partial class AvtosolaPage : Form {
+
+        Excel.Application oXL;
+        Excel._Workbook oWB;
+        Excel._Worksheet oSheet;
+
+
         Avtosola sola = new Avtosola();
         List<Kraj> krajceki = new List<Kraj>();
         List<Izpit> izpiti = new List<Izpit>();
@@ -25,6 +36,7 @@ namespace miniProjekt___Avtosole {
         private void AvtosolaPage_Load(object sender, EventArgs e) {
             label8.Enabled = false;
             label9.Enabled = false;
+            excIzvozTextbox.Enabled = true;
             minStarostIzpitTxt.Enabled = false;
             tipIzpitaTxt.Enabled = false;
             avtoEmailTxt.Text = sola.Email;
@@ -339,6 +351,7 @@ namespace miniProjekt___Avtosole {
 
         private void urediInstruktorjiBtn_Click(object sender, EventArgs e) {
             int idI = urediINstruktorCombobox.SelectedIndex;
+            excIzvozTextbox.Enabled = true;
             int idnstruktorja = instruktorji[idI].ID;
 
             using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
@@ -494,6 +507,51 @@ namespace miniProjekt___Avtosole {
                 }
                 conS.Close();
             }
+        }
+
+        private void tipIzpitaTxt_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void excelBtn_Click(object sender, EventArgs e) {
+            oXL = new Excel.Application();
+            oWB = (Excel.Workbook)oXL.Workbooks.Add();
+            oSheet = (Excel._Worksheet)oWB.ActiveSheet;
+
+            oSheet.Cells[1, 1] = "Ime";
+            oSheet.Cells[1, 2] = "Priimek";
+            oSheet.Cells[1, 3] = "Email";
+            oSheet.Cells[1, 4] = "Telefon";
+
+            oSheet.get_Range("A1", "F1").Font.Bold = true;
+            oSheet.get_Range("A1", "F1").VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            int naprej1 = 2;
+
+            using (NpgsqlConnection con = new NpgsqlConnection(connect)) {
+                con.Open();
+
+                NpgsqlCommand aha = new NpgsqlCommand("SELECT * FROM instruktorjipodatkiid('" + sola.ID + "')", con);
+                NpgsqlDataReader pff = aha.ExecuteReader();
+                while (pff.Read()) {
+                    oSheet.Cells[naprej1, 1] = pff.GetString(1);
+                    oSheet.Cells[naprej1, 2] = pff.GetString(2);
+                    oSheet.Cells[naprej1, 3] = pff.GetString(3);
+                    oSheet.Cells[naprej1, 4] = pff.GetString(4);
+                    naprej1++;
+                }
+
+                con.Close();
+
+                con.Open();
+            }
+            oWB.Application.ActiveWorkbook.SaveAs(@"D:\Namizje\" + excIzvozTextbox.Text + ".xlsx");
+            excIzvozTextbox.Enabled = false;
+            excIzvozTextbox.Clear();
+            excelBtn.Enabled = false;
+        }
+
+        private void excIzvozTextbox_TextChanged(object sender, EventArgs e) {
+            excelBtn.Enabled = true;
         }
     }
 }
